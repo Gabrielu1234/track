@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using LibrarieClase;
 
 namespace LibrarieDate
@@ -12,21 +13,47 @@ namespace LibrarieDate
         private const int NR_MAX_ALIMENTE = 100;
         private Aliment[] alimente;
         private int nrAlimente;
+        private string numeFisier;
         public AdministrareAliment()
         {
             alimente = new Aliment[NR_MAX_ALIMENTE];
             nrAlimente = 0;
         }
+        public AdministrareAliment(string numeFisier)
+        {
+            this.numeFisier = numeFisier;
+            Stream streamFisierText = File.Open(numeFisier, FileMode.OpenOrCreate);
+            streamFisierText.Close();
+        }
         public void AdaugaAliment(Aliment a)
         {
-            alimente[nrAlimente++] = a;
+            using (StreamWriter swFisierText = new StreamWriter(numeFisier, true))
+            {
+                swFisierText.WriteLine(a.id_aliment + ";" + a.denumire + ";" + a.calorii + ";" + a.proteine + ";" + a.carbohidrati + ";" + a.grasimi + ";" + a.tip_produs);
+            }
         }
-        public void AfisareAlimente()
+        public Aliment[] GetAlimente(out int nrAlimente)
         {
+            Aliment[] copie = new Aliment[NR_MAX_ALIMENTE];
+            using (StreamReader sr = new StreamReader(numeFisier))
+            {
+                string linie;
+                nrAlimente = 0;
+                while ((linie = sr.ReadLine()) != null)
+                {
+                    copie[nrAlimente++] = new Aliment(linie);
+                }
+            }
+            return copie;
+        }
+        public string AfisareAlimente()
+        {
+            string s = "";
             for (int i = 0; i < nrAlimente; i++)
             {
-                Console.WriteLine(alimente[i].ToString());
+                s += alimente[i].ToStringAliment() + "\n";
             }
+            return s;
         }
         public Aliment CautareAliment(string denumire)
         {

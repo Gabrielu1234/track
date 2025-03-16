@@ -25,11 +25,20 @@ namespace LibrarieDate
             Stream streamFisierText = File.Open(numeFisier, FileMode.OpenOrCreate);
             streamFisierText.Close();
         }
+        /*
         public void AdaugaAliment(Aliment a)
         {
             using (StreamWriter swFisierText = new StreamWriter(numeFisier, true))
             {
                 swFisierText.WriteLine(a.id_aliment + ";" + a.denumire + ";" + a.calorii + ";" + a.proteine + ";" + a.carbohidrati + ";" + a.grasimi + ";" + a.tip_produs);
+            }
+        }
+        */
+        public void AdaugaAliment(Aliment a)
+        {
+            using (StreamWriter swFisierText = new StreamWriter(numeFisier, true))
+            {
+                swFisierText.WriteLine(a.ConversieLaSir_PentruFisier());
             }
         }
         public Aliment[] GetAlimente(out int nrAlimente)

@@ -41,7 +41,9 @@ namespace Tracker
                 Console.WriteLine("7. Afisare ultima persoana");
                 Console.WriteLine("8. Afisare ultimul aliment");
                 Console.WriteLine("9. Mananaca ultima persoana");
-                Console.WriteLine("10. Inchidere");
+                Console.WriteLine("10. Cauta Persoana");
+                Console.WriteLine("11. Cauta Aliment");
+                Console.WriteLine("12. Inchidere");
 
                 Console.WriteLine("Optiunea ta: ");
                 optiune = Console.ReadLine();
@@ -82,13 +84,39 @@ namespace Tracker
                         persoanaNou.AdaugaConsum(alimentNou);
                         break;
                     case "10":
+                        Console.WriteLine("Numele persoanei cautate: ");
+                        string numeCautat = Console.ReadLine();
+                        Persoana persoanaGasita = adminPersoane.CautarePersoanaFisier(numeCautat);
+                        if (persoanaGasita != null)
+                        {
+                            Console.WriteLine(persoanaGasita.ToStringPersoana());
+                        }
+                        else
+                        {
+                            Console.WriteLine("Persoana nu a fost gasita");
+                        }
+                        break;
+                    case "11":
+                        Console.WriteLine("Denumirea alimentului cautat: ");
+                        string denumireCautata = Console.ReadLine();
+                        Aliment alimentGasit = adminAlimente.CautareAlimentFisier(denumireCautata);
+                        if (alimentGasit != null)
+                        {
+                            Console.WriteLine(alimentGasit.ToStringAliment());
+                        }
+                        else
+                        {
+                            Console.WriteLine("Alimentul nu a fost gasit");
+                        }
+                        break;
+                    case "12":
                         return;
                     default:
                         Console.WriteLine("Optiune incorecta");
                         break;
 
                 }
-            } while (optiune != "10");
+            } while (optiune != "12");
         }
         public static Aliment CitireTastaturaAliment()
         {
@@ -109,8 +137,16 @@ namespace Tracker
             Console.WriteLine("Grasimi: ");
             grasimi = int.Parse(Console.ReadLine());
             Console.WriteLine("Tip: ");
-            tip = Console.ReadLine();
-            return new Aliment(0, denumire, calorii, proteine, carbohidrati, grasimi, tip);
+            Console.WriteLine("1. Fructe");
+            Console.WriteLine("2. Legume");
+            Console.WriteLine("3. Carne");
+            Console.WriteLine("4. Lactate");
+            Console.WriteLine("5. Cereale");
+            Console.WriteLine("6. Dulciuri");
+            Console.WriteLine("7. Bauturi");
+            Console.WriteLine("8. Altele");
+            int optiune = Convert.ToInt32(Console.ReadLine());
+            return new Aliment(0, denumire, calorii, proteine, carbohidrati, grasimi, (Aliment.TipProdus)optiune);
         }
         public static Persoana CitireTastaturaPersoana()
         {
@@ -120,7 +156,22 @@ namespace Tracker
             nume = Console.ReadLine();
             Console.WriteLine("Calorii: ");
             calorii = double.Parse(Console.ReadLine());
-            return new Persoana(0, nume, calorii);
+            Persoana pers= new Persoana(0, nume, calorii);
+
+            Console.WriteLine("Activitati: ");
+            Console.WriteLine("1. Cardio");
+            Console.WriteLine("2. Forta");
+            Console.WriteLine("4. Mobilitate");
+            Console.WriteLine("8. Sporturi");
+            Console.WriteLine("16. Altele");
+            string activitati= Console.ReadLine();
+            string[] activitatiSplit = activitati.Split(' ');
+            foreach (string activitate in activitatiSplit)
+            {
+                pers.activitate |= (Persoana.TipActivitate)Enum.Parse(typeof(Persoana.TipActivitate), activitate);
+            }
+
+            return pers;
         }
         public static void AfisarePersoane(Persoana[] persoane, int nrPersoane)
         {

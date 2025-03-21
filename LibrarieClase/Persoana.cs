@@ -8,6 +8,15 @@ namespace LibrarieClase
 {
     public class Persoana
     {
+        public enum TipActivitate
+        {
+            Niciuna = 0,
+            Cardio = 1 << 0,      
+            Forta = 1 << 1,       
+            Mobilitate = 1 << 2,   
+            Sporturi = 1 << 3,
+            Altele = 1 << 4
+        }
         //constante
         private const char SEPARATOR_PRINCIPAL_FISIER = ';';
         private const int ID = 0;
@@ -27,6 +36,7 @@ namespace LibrarieClase
         public double grasimi_consumate { get; set; }
         public double calorii_mentinere { get; set; } ///o sa fie comparat cu cele consumate
         public int mese { get; set; } ///o sa fie incrementat
+        public TipActivitate activitate { get; set; }
 
 
         public Persoana()
@@ -44,6 +54,7 @@ namespace LibrarieClase
             this.id_persoana = id_persoana;
             this.nume = nume;
             this.calorii_mentinere = calorii_mentinere;
+            this.activitate = TipActivitate.Niciuna;
 
 
         }
@@ -58,16 +69,17 @@ namespace LibrarieClase
             this.grasimi_consumate = Convert.ToDouble(dateFisier[GRASIMI_CONSUMATE]);
             this.calorii_mentinere = Convert.ToDouble(dateFisier[CALORII_MENTINERE]);
             this.mese = Convert.ToInt32(dateFisier[MESE]);
+            this.activitate = TipActivitate.Niciuna;
 
         }
         public string ToStringPersoana()
         {
-            return nume + " " + calorii_consumate + " " + proteine_consumate + " " + carbohidrati_consumati + " " + grasimi_consumate + " " + calorii_mentinere + " " + mese;
+            return nume + " " + calorii_consumate + " " + proteine_consumate + " " + carbohidrati_consumati + " " + grasimi_consumate + " " + calorii_mentinere + " " + mese + " " + activitate;
         }
         public string ConversieLaSir_PentruFisier()
         {
-            string obiectPersoana = string.Format("{1}{0}{2}{0}{3}{0}{4}{0}{5}{0}{6}{0}{7}{0}{8}",
-                SEPARATOR_PRINCIPAL_FISIER, id_persoana, nume, calorii_consumate, proteine_consumate, carbohidrati_consumati, grasimi_consumate, calorii_mentinere, mese);
+            string obiectPersoana = string.Format("{1}{0}{2}{0}{3}{0}{4}{0}{5}{0}{6}{0}{7}{0}{8}{0}{9}",
+                SEPARATOR_PRINCIPAL_FISIER, id_persoana, nume, calorii_consumate, proteine_consumate, carbohidrati_consumati, grasimi_consumate, calorii_mentinere, mese,activitate);
             return obiectPersoana;
 
         }

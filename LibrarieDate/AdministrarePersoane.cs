@@ -65,6 +65,7 @@ namespace LibrarieDate
             }
             return s;
         }
+        /*
         public Persoana CautarePersoana(string nume)
         {
             for (int i = 0; i < nrPersoane; i++)
@@ -72,6 +73,23 @@ namespace LibrarieDate
                 if (persoane[i].nume == nume)
                 {
                     return persoane[i];
+                }
+            }
+            return null;
+        }
+        */
+        public Persoana CautarePersoanaFisier(string nume)
+        {
+            using (StreamReader sr = new StreamReader(numeFisier))
+            {
+                string linie;
+                while ((linie = sr.ReadLine()) != null)
+                {
+                    Persoana p = new Persoana(linie);
+                    if (p.nume == nume)
+                    {
+                        return p;
+                    }
                 }
             }
             return null;

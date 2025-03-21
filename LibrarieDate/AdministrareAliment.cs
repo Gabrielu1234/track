@@ -64,6 +64,7 @@ namespace LibrarieDate
             }
             return s;
         }
+        /*
         public Aliment CautareAliment(string denumire)
         {
             for (int i = 0; i < nrAlimente; i++)
@@ -71,6 +72,23 @@ namespace LibrarieDate
                 if (alimente[i].denumire == denumire)
                 {
                     return alimente[i];
+                }
+            }
+            return null;
+        }
+        */
+        public Aliment CautareAlimentFisier(string denumire)
+        {
+            using (StreamReader sr = new StreamReader(numeFisier))
+            {
+                string linie;
+                while ((linie = sr.ReadLine()) != null)
+                {
+                    Aliment a = new Aliment(linie);
+                    if (a.denumire == denumire)
+                    {
+                        return a;
+                    }
                 }
             }
             return null;

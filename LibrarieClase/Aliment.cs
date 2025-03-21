@@ -9,6 +9,17 @@ namespace LibrarieClase
 {
     public class Aliment
     {
+        public enum TipProdus
+        {
+            Fructe = 1,
+            Legume = 2,
+            Carne = 3,
+            Lactate = 4,
+            Cereale = 5,
+            Dulciuri = 6,
+            Bauturi = 7,
+            Altele = 8,
+        };
         //constante
         private const char SEPARATOR_PRINCIPAL_FISIER = ';';
         private const int ID = 0;
@@ -21,12 +32,12 @@ namespace LibrarieClase
 
 
         public int id_aliment { get; set; }
-        public string denumire { get; set; } ///ou per 100g
+        public string denumire { get; set; } 
         public double calorii { get; set; } ///=proteine*4+carbohidrati*4+grasimi*9
-        public double proteine { get; set; } ///12.6g
-        public double carbohidrati { get; set; } ///1.1g
-        public double grasimi { get; set; } ///9.5g
-        public string tip_produs { get; set; } ///origine animala
+        public double proteine { get; set; } 
+        public double carbohidrati { get; set; } 
+        public double grasimi { get; set; } 
+        public TipProdus tip_produs { get; set; } 
 
         public Aliment()
         {
@@ -35,9 +46,8 @@ namespace LibrarieClase
             proteine = 0;
             carbohidrati = 0;
             grasimi = 0;
-            tip_produs = "";
         }
-        public Aliment(int id_aliment, string denumire, double calorii, double proteine, double carbohidrati, double grasimi, string tip_produs)
+        public Aliment(int id_aliment, string denumire, double calorii, double proteine, double carbohidrati, double grasimi, TipProdus tip_produs)
         {
             this.id_aliment = id_aliment;
             this.denumire = denumire;
@@ -56,7 +66,7 @@ namespace LibrarieClase
             this.proteine = Convert.ToDouble(dateFisier[PROTEINE]);
             this.carbohidrati = Convert.ToDouble(dateFisier[CARBOHIDRATI]);
             this.grasimi = Convert.ToDouble(dateFisier[GRASIMI]);
-            this.tip_produs = dateFisier[TIP_PRODUS];
+            this.tip_produs = (TipProdus)Enum.Parse(typeof(TipProdus), dateFisier[TIP_PRODUS]);
         }
         public string ToStringAliment()
         {

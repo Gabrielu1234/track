@@ -40,7 +40,7 @@ namespace Tracker
                 Console.WriteLine("6. Salvare alimente");
                 Console.WriteLine("7. Afisare ultima persoana");
                 Console.WriteLine("8. Afisare ultimul aliment");
-                Console.WriteLine("9. Mananaca ultima persoana");
+                Console.WriteLine("9. Mananaca persoana x aliment y");
                 Console.WriteLine("10. Cauta Persoana");
                 Console.WriteLine("11. Cauta Aliment");
                 Console.WriteLine("12. Inchidere");
@@ -81,7 +81,16 @@ namespace Tracker
                         AfisareAliment(alimentNou);
                         break;
                     case "9":
-                        persoanaNou.AdaugaConsum(alimentNou);
+                        // modifica obiectul bine, dar nu il salveaza in fisier corect
+                        Console.WriteLine("Numele persoanei cautate: ");
+                        string numePersoana = Console.ReadLine();
+                        Persoana persoanaGasita2 = adminPersoane.CautarePersoanaFisier(numePersoana);
+                        Console.WriteLine("Numele alimentului: ");
+                        string numeAliment = Console.ReadLine();
+                        Aliment alimentGasit2 = adminAlimente.CautareAlimentFisier(numeAliment);
+                        persoanaGasita2.AdaugaConsum(alimentGasit2);
+                        Console.WriteLine(persoanaGasita2.ToStringPersoana());
+                        adminPersoane.ModificarePersoanaFisier(persoanaGasita2);
                         break;
                     case "10":
                         Console.WriteLine("Numele persoanei cautate: ");

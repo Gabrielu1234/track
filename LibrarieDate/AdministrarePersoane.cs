@@ -42,6 +42,21 @@ namespace LibrarieDate
                 swFisierText.WriteLine(p.ConversieLaSir_PentruFisier());
             }
         }
+        // nu pune obiectul modificat bine in fisier
+        public void ModificarePersoanaFisier(Persoana p)
+        {
+            using (StreamWriter sw = new StreamWriter(numeFisier, true))
+            {
+                for (int i = 0; i < nrPersoane; i++)
+                {
+                    if (persoane[i].nume == p.nume)
+                    {
+                        persoane[i] = p;
+                    }
+                    sw.WriteLine(persoane[i].ConversieLaSir_PentruFisier());
+                }
+            }
+        }
         public Persoana[] GetPersoane(out int nrPersoane)
         {
             Persoana[] copie = new Persoana[NR_MAX_PERSOANE];

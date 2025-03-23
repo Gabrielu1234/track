@@ -8,6 +8,7 @@ namespace LibrarieClase
 {
     public class Persoana
     {
+        [Flags]
         public enum TipActivitate
         {
             Niciuna = 0,
@@ -27,6 +28,7 @@ namespace LibrarieClase
         private const int GRASIMI_CONSUMATE = 5;
         private const int CALORII_MENTINERE = 6;
         private const int MESE = 7;
+        private const int ACTIVITATE = 8;
 
         public int id_persoana { get; set; }
         public string nume { get; set; }
@@ -69,12 +71,12 @@ namespace LibrarieClase
             this.grasimi_consumate = Convert.ToDouble(dateFisier[GRASIMI_CONSUMATE]);
             this.calorii_mentinere = Convert.ToDouble(dateFisier[CALORII_MENTINERE]);
             this.mese = Convert.ToInt32(dateFisier[MESE]);
-            this.activitate = TipActivitate.Niciuna;
+            this.activitate = (TipActivitate)Enum.Parse(typeof(TipActivitate), dateFisier[ACTIVITATE]);
 
         }
         public string ToStringPersoana()
         {
-            return nume + " " + calorii_consumate + " " + proteine_consumate + " " + carbohidrati_consumati + " " + grasimi_consumate + " " + calorii_mentinere + " " + mese + " " + activitate;
+            return nume + " " + calorii_consumate + " " + proteine_consumate + " " + carbohidrati_consumati + " " + grasimi_consumate + " " + calorii_mentinere + " " + mese + " " + GetActivitatiString(activitate);
         }
         public string ConversieLaSir_PentruFisier()
         {
@@ -83,14 +85,30 @@ namespace LibrarieClase
             return obiectPersoana;
 
         }
-        //functie care adauga calorii, proteine, carbohidrati si grasimi consumate de o persoana folosind un aliment si masa acestuia
-        public void AdaugaConsum(Aliment a)
+        //modifica bine valorile :D
+        public Persoana AdaugaConsum(Aliment a)
         {
             calorii_consumate += a.calorii;
             proteine_consumate += a.proteine;
             carbohidrati_consumati += a.carbohidrati;
             grasimi_consumate += a.grasimi;
             mese++;
+            return this;
+        }
+        public string GetActivitatiString(TipActivitate activitate)
+        {
+            string activitati = "";
+            if ((activitate & TipActivitate.Cardio) == TipActivitate.Cardio)
+                activitati += "Cardio ";
+            if ((activitate & TipActivitate.Forta) == TipActivitate.Forta)
+                activitati += "Forta ";
+            if ((activitate & TipActivitate.Mobilitate) == TipActivitate.Mobilitate)
+                activitati += "Mobilitate ";
+            if ((activitate & TipActivitate.Sporturi) == TipActivitate.Sporturi)
+                activitati += "Sporturi ";
+            if ((activitate & TipActivitate.Altele) == TipActivitate.Altele)
+                activitati += "Altele ";
+            return activitati;
         }
     }
 }

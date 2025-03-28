@@ -19,8 +19,13 @@ namespace Tracker
 
             string numeFisierPersoane = ConfigurationManager.AppSettings["NumeFisierPersoane"];
             string numeFisierAlimente = ConfigurationManager.AppSettings["NumeFisierAlimente"];
-            AdministrarePersoane adminPersoane = new AdministrarePersoane(numeFisierPersoane);
-            AdministrareAliment adminAlimente = new AdministrareAliment(numeFisierAlimente);
+            string locatieFisierSolutie = Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            string caleFisierPersoane = locatieFisierSolutie + "\\" + numeFisierPersoane;
+            string caleFisierAlimente = locatieFisierSolutie + "\\" + numeFisierAlimente;
+            //AdministrarePersoane adminPersoane = new AdministrarePersoane(numeFisierPersoane);
+            AdministrarePersoane adminPersoane = new AdministrarePersoane(caleFisierPersoane);
+            //AdministrareAliment adminAlimente = new AdministrareAliment(numeFisierAlimente);
+            AdministrareAliment adminAlimente = new AdministrareAliment(caleFisierAlimente);
 
 
             Persoana persoanaNou = new Persoana();

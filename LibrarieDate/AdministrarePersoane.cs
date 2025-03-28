@@ -69,6 +69,7 @@ namespace LibrarieDate
                     copie[nrPersoane++] = new Persoana(linie);
                 }
             }
+            Array.Resize(ref copie, nrPersoane);
             return copie;
         }
         public string AfisarePersoane()

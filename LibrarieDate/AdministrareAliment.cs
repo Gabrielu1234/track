@@ -53,6 +53,7 @@ namespace LibrarieDate
                     copie[nrAlimente++] = new Aliment(linie);
                 }
             }
+            Array.Resize(ref copie, nrAlimente);
             return copie;
         }
         public string AfisareAlimente()

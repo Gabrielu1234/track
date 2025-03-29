@@ -1,1 +1,2 @@
 1;mar;100;3;52;2;Fructe
+1;nuca;130;1;2;3;Lactate

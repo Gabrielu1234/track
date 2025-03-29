@@ -139,7 +139,6 @@ namespace Tracker
             int proteine;
             int carbohidrati;
             int grasimi;
-            string tip;
             Console.WriteLine("Denumire: ");
             denumire = Console.ReadLine();
             Console.WriteLine("Calorii: ");

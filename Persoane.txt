@@ -1,3 +1,2 @@
-1;dasd;0;0;0;0;41212;0;Cardio, Mobilitate
-1;dsada;0;0;0;0;3123;0;Cardio, Mobilitate
-1;yerat;0;0;0;0;12412;0;Forta, Mobilitate, Sporturi
+1;Gabi;0;0;0;0;2500;0;Forta, Mobilitate
+2;Bogdan;0;0;0;0;2500;0;Cardio, Mobilitate, Sporturi

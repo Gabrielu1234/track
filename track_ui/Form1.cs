@@ -31,6 +31,13 @@ namespace track_ui
         private Label lblaGrasimi;
         private Label lblaTipProdus;
 
+        private Label lblaDenumire1;
+        private Label lblaCalorii1;
+        private Label lblaProteine1;
+        private Label lblaCarbohidrati1;
+        private Label lblaGrasimi1;
+        private Label lblaTipProdus1;
+
         private Label[] lblsaDenumire;
         private Label[] lblsaCalorii;
         private Label[] lblsaProteine;
@@ -59,6 +66,10 @@ namespace track_ui
         private Label lblpCaloriiMentinere;
         private Label lblpMese;
         private Label lblpActivitate;
+
+        private Label lblpNume1;
+        private Label lblpCaloriiMentinere1;
+        private Label lblpActivitate1;
 
         private Label[] lblspNume;
         private Label[] lblspCaloriiConsumate;
@@ -166,12 +177,12 @@ namespace track_ui
 
 
             //adauga control tip label pt denumire
-            lblaDenumire = new Label();
-            lblaDenumire.Text = "Denumire";
-            lblaDenumire.Width = LATIME_CONTROL;
-            lblaDenumire.Left = 1 * DIMENSIUNE_PAS_X;
-            lblaDenumire.Top = (top-1) * DIMENISUNE_PAS_Y;
-            this.Controls.Add(lblaDenumire);
+            lblaDenumire1 = new Label();
+            lblaDenumire1.Text = "Denumire";
+            lblaDenumire1.Width = LATIME_CONTROL;
+            lblaDenumire1.Left = 1 * DIMENSIUNE_PAS_X;
+            lblaDenumire1.Top = (top-1) * DIMENISUNE_PAS_Y;
+            this.Controls.Add(lblaDenumire1);
 
             txtDenumire = new TextBox();
             txtDenumire.Width = LATIME_CONTROL;
@@ -180,12 +191,12 @@ namespace track_ui
             this.Controls.Add(txtDenumire);
 
             //adauga control tip label pt calorii
-            lblaCalorii = new Label();
-            lblaCalorii.Text = "Calorii";
-            lblaCalorii.Width = LATIME_CONTROL;
-            lblaCalorii.Left = 2 * DIMENSIUNE_PAS_X;
-            lblaCalorii.Top = (top - 1) * DIMENISUNE_PAS_Y;
-            this.Controls.Add(lblaCalorii);
+            lblaCalorii1 = new Label();
+            lblaCalorii1.Text = "Calorii";
+            lblaCalorii1.Width = LATIME_CONTROL;
+            lblaCalorii1.Left = 2 * DIMENSIUNE_PAS_X;
+            lblaCalorii1.Top = (top - 1) * DIMENISUNE_PAS_Y;
+            this.Controls.Add(lblaCalorii1);
 
             txtCalorii = new TextBox();
             txtCalorii.Width = LATIME_CONTROL;
@@ -194,12 +205,12 @@ namespace track_ui
             this.Controls.Add(txtCalorii);
 
             //adauga control tip label pt proteine
-            lblaProteine = new Label();
-            lblaProteine.Text = "Proteine";
-            lblaProteine.Width = LATIME_CONTROL;
-            lblaProteine.Left = 3 * DIMENSIUNE_PAS_X;
-            lblaProteine.Top = (top - 1) * DIMENISUNE_PAS_Y;
-            this.Controls.Add(lblaProteine);
+            lblaProteine1 = new Label();
+            lblaProteine1.Text = "Proteine";
+            lblaProteine1.Width = LATIME_CONTROL;
+            lblaProteine1.Left = 3 * DIMENSIUNE_PAS_X;
+            lblaProteine1.Top = (top - 1) * DIMENISUNE_PAS_Y;
+            this.Controls.Add(lblaProteine1);
 
             txtProteine = new TextBox();
             txtProteine.Width = LATIME_CONTROL;
@@ -208,12 +219,12 @@ namespace track_ui
             this.Controls.Add(txtProteine);
 
             //adauga control tip label pt carbohidrati
-            lblaCarbohidrati = new Label();
-            lblaCarbohidrati.Text = "Carbohidrati";
-            lblaCarbohidrati.Width = LATIME_CONTROL;
-            lblaCarbohidrati.Left = 4 * DIMENSIUNE_PAS_X;
-            lblaCarbohidrati.Top = (top - 1) * DIMENISUNE_PAS_Y;
-            this.Controls.Add(lblaCarbohidrati);
+            lblaCarbohidrati1 = new Label();
+            lblaCarbohidrati1.Text = "Carbohidrati";
+            lblaCarbohidrati1.Width = LATIME_CONTROL;
+            lblaCarbohidrati1.Left = 4 * DIMENSIUNE_PAS_X;
+            lblaCarbohidrati1.Top = (top - 1) * DIMENISUNE_PAS_Y;
+            this.Controls.Add(lblaCarbohidrati1);
 
             txtCarbohidrati = new TextBox();
             txtCarbohidrati.Width = LATIME_CONTROL;
@@ -222,12 +233,12 @@ namespace track_ui
             this.Controls.Add(txtCarbohidrati);
 
             //adauga control tip label pt grasimi
-            lblaGrasimi = new Label();
-            lblaGrasimi.Text = "Grasimi";
-            lblaGrasimi.Width = LATIME_CONTROL;
-            lblaGrasimi.Left = 5 * DIMENSIUNE_PAS_X;
-            lblaGrasimi.Top = (top - 1) * DIMENISUNE_PAS_Y;
-            this.Controls.Add(lblaGrasimi);
+            lblaGrasimi1 = new Label();
+            lblaGrasimi1.Text = "Grasimi";
+            lblaGrasimi1.Width = LATIME_CONTROL;
+            lblaGrasimi1.Left = 5 * DIMENSIUNE_PAS_X;
+            lblaGrasimi1.Top = (top - 1) * DIMENISUNE_PAS_Y;
+            this.Controls.Add(lblaGrasimi1);
 
             txtGrasimi = new TextBox();
             txtGrasimi.Width = LATIME_CONTROL;
@@ -236,12 +247,12 @@ namespace track_ui
             this.Controls.Add(txtGrasimi);
 
             //adauga control tip label pt tip produs
-            lblaTipProdus = new Label();
-            lblaTipProdus.Text = "Tip Produs";
-            lblaTipProdus.Width = LATIME_CONTROL;
-            lblaTipProdus.Left = 6 * DIMENSIUNE_PAS_X;
-            lblaTipProdus.Top = (top - 1) * DIMENISUNE_PAS_Y;
-            this.Controls.Add(lblaTipProdus);
+            lblaTipProdus1 = new Label();
+            lblaTipProdus1.Text = "Tip Produs";
+            lblaTipProdus1.Width = LATIME_CONTROL;
+            lblaTipProdus1.Left = 6 * DIMENSIUNE_PAS_X;
+            lblaTipProdus1.Top = (top - 1) * DIMENISUNE_PAS_Y;
+            this.Controls.Add(lblaTipProdus1);
 
             txtTipProdus = new ComboBox ();
             txtTipProdus.Width = LATIME_CONTROL;
@@ -406,12 +417,74 @@ namespace track_ui
         }
         private void AdaugaAliment(object sender, EventArgs e)
         {
+            int ok = 1;
             string denumire = txtDenumire.Text;
-            int calorii = int.Parse(txtCalorii.Text);
-            int proteine = int.Parse(txtProteine.Text);
-            int carbohidrati = int.Parse(txtCarbohidrati.Text);
-            int grasimi = int.Parse(txtGrasimi.Text);
-            int tip_produs = txtTipProdus.SelectedIndex + 1;
+            int calorii;
+            int proteine;
+            int carbohidrati;
+            int grasimi;
+            int tip_produs= txtTipProdus.SelectedIndex+1;
+            if (string.IsNullOrEmpty(denumire))
+            {
+                lblaDenumire1.ForeColor = Color.Red;
+                ok = 0;
+            }
+            else
+            {
+                lblaDenumire1.ForeColor = Color.Yellow;
+            }
+            if (!int.TryParse(txtCalorii.Text, out calorii))
+            {
+                lblaCalorii1.ForeColor = Color.Red;
+                ok = 0;
+            }
+            else
+            {
+                lblaCalorii1.ForeColor = Color.Yellow;
+            }
+            if (!int.TryParse(txtProteine.Text, out proteine))
+            {
+                lblaProteine1.ForeColor = Color.Red;
+                ok = 0;
+            }
+            else
+            {
+                lblaProteine1.ForeColor = Color.Yellow;
+            }
+            if (!int.TryParse(txtCarbohidrati.Text, out carbohidrati))
+            {
+                lblaCarbohidrati1.ForeColor = Color.Red;
+                ok = 0;
+            }
+            else
+            {
+                lblaCarbohidrati1.ForeColor = Color.Yellow;
+            }
+            if (!int.TryParse(txtGrasimi.Text, out grasimi))
+            {
+                lblaGrasimi1.ForeColor = Color.Red;
+                ok = 0;
+            }
+            else
+            {
+                lblaGrasimi1.ForeColor = Color.Yellow;
+            }
+            if (txtTipProdus.SelectedIndex == -1)
+            {
+                lblaTipProdus1.ForeColor = Color.Red;
+                ok = 0;
+            }
+            else
+            {
+                lblaTipProdus1.ForeColor = Color.Yellow;
+            }
+
+            int calorii_calculate = proteine * 4 + carbohidrati * 4 + grasimi * 9;
+            if (calorii_calculate >= calorii+50 || calorii_calculate <= calorii-50)
+            {
+                MessageBox.Show("Caloriile nu sunt calculate corect!");
+                ok = 0;
+            }
 
             Aliment[] alimente = adminAliment.GetAlimente(out int nrAlimente);
             int nextId;
@@ -425,9 +498,14 @@ namespace track_ui
             }
 
             Aliment aliment = new Aliment(nextId, denumire, calorii, proteine, carbohidrati, grasimi, (Aliment.TipProdus)tip_produs);
+            if(ok==1)
             adminAliment.AdaugaAliment(aliment);
+            else
+            {
+                MessageBox.Show("Datele introduse nu sunt valide!");
+            }
         }
-
+        
         //Persoane
         private void AfisareTxtPersoana()
         {
@@ -442,12 +520,12 @@ namespace track_ui
             this.Controls.Add(txtpersoana);
 
             //adauga control tip label pt nume
-            lblpNume = new Label();
-            lblpNume.Text = "Nume";
-            lblpNume.Width = LATIME_CONTROL;
-            lblpNume.Left = 1 * DIMENSIUNE_PAS_X;
-            lblpNume.Top = top * DIMENISUNE_PAS_Y;
-            this.Controls.Add(lblpNume);
+            lblpNume1 = new Label();
+            lblpNume1.Text = "Nume";
+            lblpNume1.Width = LATIME_CONTROL;
+            lblpNume1.Left = 1 * DIMENSIUNE_PAS_X;
+            lblpNume1.Top = top * DIMENISUNE_PAS_Y;
+            this.Controls.Add(lblpNume1);
 
             txtNume = new TextBox();
             txtNume.Width = LATIME_CONTROL;
@@ -456,13 +534,13 @@ namespace track_ui
             this.Controls.Add(txtNume);
 
             //adauga control tip label pt calorii mentinere
-            lblpCaloriiMentinere = new Label();
-            lblpCaloriiMentinere.Text = "Calorii Ment.";
-            lblpCaloriiMentinere.Width = LATIME_CONTROL;
-            lblpCaloriiMentinere.Left = 2 * DIMENSIUNE_PAS_X;
-            lblpCaloriiMentinere.Top = top * DIMENISUNE_PAS_Y;
-            lblpCaloriiMentinere.AutoSize = true;
-            this.Controls.Add(lblpCaloriiMentinere);
+            lblpCaloriiMentinere1 = new Label();
+            lblpCaloriiMentinere1.Text = "Calorii Ment.";
+            lblpCaloriiMentinere1.Width = LATIME_CONTROL;
+            lblpCaloriiMentinere1.Left = 2 * DIMENSIUNE_PAS_X;
+            lblpCaloriiMentinere1.Top = top * DIMENISUNE_PAS_Y;
+            lblpCaloriiMentinere1.AutoSize = true;
+            this.Controls.Add(lblpCaloriiMentinere1);
 
             txtCaloriiMentinere = new TextBox();
             txtCaloriiMentinere.Width = LATIME_CONTROL;
@@ -471,13 +549,13 @@ namespace track_ui
             this.Controls.Add(txtCaloriiMentinere);
 
             //adauga control tip label pt activitate
-            lblpActivitate = new Label();
-            lblpActivitate.Text = "Activitate";
-            lblpActivitate.Width = LATIME_CONTROL;
-            lblpActivitate.Left = 3 * DIMENSIUNE_PAS_X;
-            lblpActivitate.Top = top * DIMENISUNE_PAS_Y;
-            lblpActivitate.AutoSize = true;
-            this.Controls.Add(lblpActivitate);
+            lblpActivitate1 = new Label();
+            lblpActivitate1.Text = "Activitate";
+            lblpActivitate1.Width = LATIME_CONTROL;
+            lblpActivitate1.Left = 3 * DIMENSIUNE_PAS_X;
+            lblpActivitate1.Top = top * DIMENISUNE_PAS_Y;
+            lblpActivitate1.AutoSize = true;
+            this.Controls.Add(lblpActivitate1);
 
             txtActivitate = new ListBox();
             txtActivitate.SelectionMode = SelectionMode.MultiSimple;
@@ -532,11 +610,12 @@ namespace track_ui
 
             //adaugare control tip label pt calorii consumate
             lblpCaloriiConsumate = new Label();
-            lblpCaloriiConsumate.Text = "Calorii Consumate";
+            lblpCaloriiConsumate.Text = "Calorii Cons.";
             lblpCaloriiConsumate.Width = LATIME_CONTROL;
             lblpCaloriiConsumate.Left = 2 * DIMENSIUNE_PAS_X;
             lblpCaloriiConsumate.Top = top * DIMENISUNE_PAS_Y;
             lblpCaloriiConsumate.ForeColor = Color.Red;
+            lblpCaloriiConsumate.AutoSize = true;
             this.Controls.Add(lblpCaloriiConsumate);
 
             //adaugare control tip label pt proteine consumate
@@ -568,11 +647,12 @@ namespace track_ui
 
             //adaugare control tip label pt calorii mentinere
             lblpCaloriiMentinere = new Label();
-            lblpCaloriiMentinere.Text = "Calorii Mentinere";
+            lblpCaloriiMentinere.Text = "Calorii Ment.";
             lblpCaloriiMentinere.Width = LATIME_CONTROL;
             lblpCaloriiMentinere.Left = 6 * DIMENSIUNE_PAS_X;
             lblpCaloriiMentinere.Top = top * DIMENISUNE_PAS_Y;
             lblpCaloriiMentinere.ForeColor = Color.Red;
+            lblpCaloriiMentinere.AutoSize = true;
             this.Controls.Add(lblpCaloriiMentinere);
 
             //adaugare control tip label pt mese
@@ -670,29 +750,63 @@ namespace track_ui
         }
         private void AdaugaPersoana(object sender, EventArgs e)
         {
+            int ok = 1;
             string nume = txtNume.Text;
-            double calorii_mentinere = double.Parse(txtCaloriiMentinere.Text);
+            double calorii_mentinere;
+            if (string.IsNullOrEmpty(nume))
+            {
+                lblpNume1.ForeColor = Color.Red;
+                ok = 0;
+            }
+            else
+            {
+                lblpNume1.ForeColor = Color.Yellow;
+            }
+            if (!double.TryParse(txtCaloriiMentinere.Text, out calorii_mentinere))
+            {
+                lblpCaloriiMentinere1.ForeColor = Color.Red;
+                ok = 0;
+            }
+            else
+            {
+                lblpCaloriiMentinere1.ForeColor = Color.Yellow;
+            }
 
             Persoana.TipActivitate activitate = Persoana.TipActivitate.Niciuna;
             foreach (var item in txtActivitate.SelectedItems)
             {
                 activitate |= (Persoana.TipActivitate)item;
             }
-
-            Persoana[] persoane = adminPersoane.GetPersoane(out int nrPersoane);
-            int nextId;
-            if (nrPersoane > 0)
+            if (txtActivitate.SelectedIndex == -1)
             {
-                nextId = persoane.Max(p => p.id_persoana) + 1;
+                lblpActivitate1.ForeColor = Color.Red;
+                ok = 0;
             }
             else
             {
-                nextId = 1;
+                lblpActivitate1.ForeColor = Color.Yellow;
             }
+            if (ok == 1)
+            {
+                Persoana[] persoane = adminPersoane.GetPersoane(out int nrPersoane);
+                int nextId;
+                if (nrPersoane > 0)
+                {
+                    nextId = persoane.Max(p => p.id_persoana) + 1;
+                }
+                else
+                {
+                    nextId = 1;
+                }
 
-            Persoana persoana = new Persoana(nextId, nume, calorii_mentinere);
-            persoana.activitate = activitate;
-            adminPersoane.AdaugaPersoana(persoana);
+                Persoana persoana = new Persoana(nextId, nume, calorii_mentinere);
+                persoana.activitate = activitate;
+                adminPersoane.AdaugaPersoana(persoana);
+            }
+            else
+            {
+                MessageBox.Show("Datele introduse nu sunt valide!");
+            }
         }
     }
 }

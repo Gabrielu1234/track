@@ -33,6 +33,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Design.1.2.0.3\lib\net40\MetroFramework.Design.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -53,10 +63,46 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAdaugaAliment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdaugaAliment.Designer.cs">
+      <DependentUpon>FormAdaugaAliment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdaugaPersoana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdaugaPersoana.Designer.cs">
+      <DependentUpon>FormAdaugaPersoana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAliment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAliment.Designer.cs">
+      <DependentUpon>FormAliment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPersoana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPersoana.Designer.cs">
+      <DependentUpon>FormPersoana.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdaugaAliment.resx">
+      <DependentUpon>FormAdaugaAliment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdaugaPersoana.resx">
+      <DependentUpon>FormAdaugaPersoana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAliment.resx">
+      <DependentUpon>FormAliment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPersoana.resx">
+      <DependentUpon>FormPersoana.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -66,7 +112,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -89,6 +137,12 @@
       <Project>{43d9f02d-87a0-46aa-8ab5-839a383c80b3}</Project>
       <Name>LibrarieDate</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ui.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MetroFramework.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

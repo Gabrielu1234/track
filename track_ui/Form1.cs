@@ -25,6 +25,9 @@ namespace track_ui
         public Form1()
         {
             InitializeComponent();
+            this.BackColor = Color.White;
+            this.TransparencyKey=Color.Empty;
+
         }
 
         private void Form1_Load(object sender, EventArgs e)

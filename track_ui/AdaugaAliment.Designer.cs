@@ -50,65 +50,84 @@
             this.metroTitlu.AutoSize = true;
             this.metroTitlu.Location = new System.Drawing.Point(4, 0);
             this.metroTitlu.Name = "metroTitlu";
-            this.metroTitlu.Size = new System.Drawing.Size(55, 19);
+            this.metroTitlu.Size = new System.Drawing.Size(56, 20);
+            this.metroTitlu.Style = MetroFramework.MetroColorStyle.Yellow;
             this.metroTitlu.TabIndex = 0;
             this.metroTitlu.Text = "Adauga";
             // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
+            this.metroLabel1.ForeColor = System.Drawing.Color.Black;
             this.metroLabel1.Location = new System.Drawing.Point(4, 35);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(66, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(71, 20);
+            this.metroLabel1.Style = MetroFramework.MetroColorStyle.Yellow;
             this.metroLabel1.TabIndex = 1;
             this.metroLabel1.Text = "Denumire";
+            this.metroLabel1.UseCustomForeColor = true;
             // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
+            this.metroLabel2.ForeColor = System.Drawing.Color.Black;
             this.metroLabel2.Location = new System.Drawing.Point(76, 35);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(47, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(47, 20);
+            this.metroLabel2.Style = MetroFramework.MetroColorStyle.Yellow;
             this.metroLabel2.TabIndex = 2;
             this.metroLabel2.Text = "Calorii";
+            this.metroLabel2.UseCustomForeColor = true;
             // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
+            this.metroLabel3.ForeColor = System.Drawing.Color.Black;
             this.metroLabel3.Location = new System.Drawing.Point(129, 35);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(58, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(61, 20);
+            this.metroLabel3.Style = MetroFramework.MetroColorStyle.Yellow;
             this.metroLabel3.TabIndex = 3;
             this.metroLabel3.Text = "Proteine";
+            this.metroLabel3.UseCustomForeColor = true;
             // 
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
+            this.metroLabel4.ForeColor = System.Drawing.Color.Black;
             this.metroLabel4.Location = new System.Drawing.Point(193, 35);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(86, 19);
+            this.metroLabel4.Size = new System.Drawing.Size(87, 20);
+            this.metroLabel4.Style = MetroFramework.MetroColorStyle.Yellow;
             this.metroLabel4.TabIndex = 4;
             this.metroLabel4.Text = "Carbohidratii";
+            this.metroLabel4.UseCustomForeColor = true;
             this.metroLabel4.Click += new System.EventHandler(this.metroLabel4_Click);
             // 
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
+            this.metroLabel5.ForeColor = System.Drawing.Color.Black;
             this.metroLabel5.Location = new System.Drawing.Point(285, 35);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(53, 19);
+            this.metroLabel5.Size = new System.Drawing.Size(55, 20);
+            this.metroLabel5.Style = MetroFramework.MetroColorStyle.Yellow;
             this.metroLabel5.TabIndex = 5;
             this.metroLabel5.Text = "Grasimi";
+            this.metroLabel5.UseCustomForeColor = true;
             this.metroLabel5.Click += new System.EventHandler(this.metroLabel5_Click);
             // 
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
+            this.metroLabel6.ForeColor = System.Drawing.Color.Black;
             this.metroLabel6.Location = new System.Drawing.Point(344, 35);
             this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(72, 19);
+            this.metroLabel6.Size = new System.Drawing.Size(75, 20);
+            this.metroLabel6.Style = MetroFramework.MetroColorStyle.Yellow;
             this.metroLabel6.TabIndex = 6;
             this.metroLabel6.Text = "Tip Produs";
+            this.metroLabel6.UseCustomForeColor = true;
             // 
             // metroDenumire
             // 
@@ -124,6 +143,7 @@
             this.metroDenumire.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroDenumire.CustomButton.UseSelectable = true;
             this.metroDenumire.CustomButton.Visible = false;
+            this.metroDenumire.ForeColor = System.Drawing.SystemColors.ControlText;
             this.metroDenumire.Lines = new string[0];
             this.metroDenumire.Location = new System.Drawing.Point(4, 72);
             this.metroDenumire.MaxLength = 32767;
@@ -135,10 +155,13 @@
             this.metroDenumire.SelectionStart = 0;
             this.metroDenumire.ShortcutsEnabled = true;
             this.metroDenumire.Size = new System.Drawing.Size(66, 23);
+            this.metroDenumire.Style = MetroFramework.MetroColorStyle.Yellow;
             this.metroDenumire.TabIndex = 7;
             this.metroDenumire.UseSelectable = true;
+            this.metroDenumire.UseStyleColors = true;
             this.metroDenumire.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroDenumire.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.metroDenumire.Click += new System.EventHandler(this.metroDenumire_Click);
             // 
             // metroCalorii
             // 
@@ -165,8 +188,10 @@
             this.metroCalorii.SelectionStart = 0;
             this.metroCalorii.ShortcutsEnabled = true;
             this.metroCalorii.Size = new System.Drawing.Size(47, 23);
+            this.metroCalorii.Style = MetroFramework.MetroColorStyle.Yellow;
             this.metroCalorii.TabIndex = 8;
             this.metroCalorii.UseSelectable = true;
+            this.metroCalorii.UseStyleColors = true;
             this.metroCalorii.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroCalorii.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -195,8 +220,10 @@
             this.metroProteine.SelectionStart = 0;
             this.metroProteine.ShortcutsEnabled = true;
             this.metroProteine.Size = new System.Drawing.Size(58, 23);
+            this.metroProteine.Style = MetroFramework.MetroColorStyle.Yellow;
             this.metroProteine.TabIndex = 9;
             this.metroProteine.UseSelectable = true;
+            this.metroProteine.UseStyleColors = true;
             this.metroProteine.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroProteine.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -225,8 +252,10 @@
             this.metroCarbohidratii.SelectionStart = 0;
             this.metroCarbohidratii.ShortcutsEnabled = true;
             this.metroCarbohidratii.Size = new System.Drawing.Size(86, 23);
+            this.metroCarbohidratii.Style = MetroFramework.MetroColorStyle.Yellow;
             this.metroCarbohidratii.TabIndex = 10;
             this.metroCarbohidratii.UseSelectable = true;
+            this.metroCarbohidratii.UseStyleColors = true;
             this.metroCarbohidratii.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroCarbohidratii.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -255,20 +284,28 @@
             this.metroGrasimi.SelectionStart = 0;
             this.metroGrasimi.ShortcutsEnabled = true;
             this.metroGrasimi.Size = new System.Drawing.Size(53, 23);
+            this.metroGrasimi.Style = MetroFramework.MetroColorStyle.Yellow;
             this.metroGrasimi.TabIndex = 11;
             this.metroGrasimi.UseSelectable = true;
+            this.metroGrasimi.UseStyleColors = true;
             this.metroGrasimi.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroGrasimi.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // metroTipProdus
             // 
+            this.metroTipProdus.BackColor = System.Drawing.Color.White;
+            this.metroTipProdus.ForeColor = System.Drawing.Color.Yellow;
             this.metroTipProdus.FormattingEnabled = true;
-            this.metroTipProdus.ItemHeight = 23;
+            this.metroTipProdus.ItemHeight = 24;
             this.metroTipProdus.Location = new System.Drawing.Point(344, 72);
             this.metroTipProdus.Name = "metroTipProdus";
-            this.metroTipProdus.Size = new System.Drawing.Size(121, 29);
+            this.metroTipProdus.Size = new System.Drawing.Size(121, 30);
+            this.metroTipProdus.Style = MetroFramework.MetroColorStyle.Yellow;
             this.metroTipProdus.TabIndex = 12;
+            this.metroTipProdus.UseCustomBackColor = true;
+            this.metroTipProdus.UseCustomForeColor = true;
             this.metroTipProdus.UseSelectable = true;
+            this.metroTipProdus.UseStyleColors = true;
             // 
             // metroTile1
             // 
@@ -295,6 +332,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.metroTile1);
             this.Controls.Add(this.metroTipProdus);
             this.Controls.Add(this.metroGrasimi);
@@ -310,7 +348,7 @@
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.metroTitlu);
             this.Name = "AdaugaAliment";
-            this.Size = new System.Drawing.Size(473, 249);
+            this.Size = new System.Drawing.Size(658, 464);
             this.Load += new System.EventHandler(this.AdaugaAliment_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

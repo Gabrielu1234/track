@@ -48,7 +48,7 @@
             this.metroTitlu.AutoSize = true;
             this.metroTitlu.Location = new System.Drawing.Point(3, 0);
             this.metroTitlu.Name = "metroTitlu";
-            this.metroTitlu.Size = new System.Drawing.Size(55, 19);
+            this.metroTitlu.Size = new System.Drawing.Size(56, 20);
             this.metroTitlu.TabIndex = 1;
             this.metroTitlu.Text = "Adauga";
             // 
@@ -57,25 +57,31 @@
             this.metroLabel1.Location = new System.Drawing.Point(3, 37);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(83, 19);
+            this.metroLabel1.Style = MetroFramework.MetroColorStyle.Yellow;
             this.metroLabel1.TabIndex = 2;
             this.metroLabel1.Text = "Nume";
+            this.metroLabel1.UseCustomForeColor = true;
             // 
             // metroLabel2
             // 
             this.metroLabel2.Location = new System.Drawing.Point(92, 37);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(67, 19);
+            this.metroLabel2.Style = MetroFramework.MetroColorStyle.Yellow;
             this.metroLabel2.TabIndex = 3;
             this.metroLabel2.Text = "Calorii";
+            this.metroLabel2.UseCustomForeColor = true;
             // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.Location = new System.Drawing.Point(165, 37);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(62, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(65, 20);
+            this.metroLabel3.Style = MetroFramework.MetroColorStyle.Yellow;
             this.metroLabel3.TabIndex = 7;
             this.metroLabel3.Text = "Activitate";
+            this.metroLabel3.UseCustomForeColor = true;
             this.metroLabel3.Click += new System.EventHandler(this.metroLabel3_Click);
             // 
             // metroNume
@@ -103,6 +109,7 @@
             this.metroNume.SelectionStart = 0;
             this.metroNume.ShortcutsEnabled = true;
             this.metroNume.Size = new System.Drawing.Size(83, 23);
+            this.metroNume.Style = MetroFramework.MetroColorStyle.Yellow;
             this.metroNume.TabIndex = 8;
             this.metroNume.UseSelectable = true;
             this.metroNume.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -133,6 +140,7 @@
             this.metroCalorii.SelectionStart = 0;
             this.metroCalorii.ShortcutsEnabled = true;
             this.metroCalorii.Size = new System.Drawing.Size(67, 23);
+            this.metroCalorii.Style = MetroFramework.MetroColorStyle.Yellow;
             this.metroCalorii.TabIndex = 9;
             this.metroCalorii.UseSelectable = true;
             this.metroCalorii.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -143,7 +151,8 @@
             this.metroCardio.AutoSize = true;
             this.metroCardio.Location = new System.Drawing.Point(165, 71);
             this.metroCardio.Name = "metroCardio";
-            this.metroCardio.Size = new System.Drawing.Size(58, 15);
+            this.metroCardio.Size = new System.Drawing.Size(63, 17);
+            this.metroCardio.Style = MetroFramework.MetroColorStyle.Yellow;
             this.metroCardio.TabIndex = 14;
             this.metroCardio.Text = "Cardio";
             this.metroCardio.UseSelectable = true;
@@ -153,7 +162,8 @@
             this.metroForta.AutoSize = true;
             this.metroForta.Location = new System.Drawing.Point(165, 92);
             this.metroForta.Name = "metroForta";
-            this.metroForta.Size = new System.Drawing.Size(50, 15);
+            this.metroForta.Size = new System.Drawing.Size(54, 17);
+            this.metroForta.Style = MetroFramework.MetroColorStyle.Yellow;
             this.metroForta.TabIndex = 15;
             this.metroForta.Text = "Forță";
             this.metroForta.UseSelectable = true;
@@ -163,7 +173,8 @@
             this.metroMobilitate.AutoSize = true;
             this.metroMobilitate.Location = new System.Drawing.Point(165, 113);
             this.metroMobilitate.Name = "metroMobilitate";
-            this.metroMobilitate.Size = new System.Drawing.Size(77, 15);
+            this.metroMobilitate.Size = new System.Drawing.Size(83, 17);
+            this.metroMobilitate.Style = MetroFramework.MetroColorStyle.Yellow;
             this.metroMobilitate.TabIndex = 16;
             this.metroMobilitate.Text = "Mobilitate";
             this.metroMobilitate.UseSelectable = true;
@@ -173,7 +184,8 @@
             this.metroSporturi.AutoSize = true;
             this.metroSporturi.Location = new System.Drawing.Point(165, 134);
             this.metroSporturi.Name = "metroSporturi";
-            this.metroSporturi.Size = new System.Drawing.Size(65, 15);
+            this.metroSporturi.Size = new System.Drawing.Size(71, 17);
+            this.metroSporturi.Style = MetroFramework.MetroColorStyle.Yellow;
             this.metroSporturi.TabIndex = 17;
             this.metroSporturi.Text = "Sporturi";
             this.metroSporturi.UseSelectable = true;
@@ -183,7 +195,8 @@
             this.metroAltele.AutoSize = true;
             this.metroAltele.Location = new System.Drawing.Point(165, 155);
             this.metroAltele.Name = "metroAltele";
-            this.metroAltele.Size = new System.Drawing.Size(53, 15);
+            this.metroAltele.Size = new System.Drawing.Size(56, 17);
+            this.metroAltele.Style = MetroFramework.MetroColorStyle.Yellow;
             this.metroAltele.TabIndex = 18;
             this.metroAltele.Text = "Altele";
             this.metroAltele.UseSelectable = true;

@@ -38,9 +38,10 @@
             this.Aliment.ActiveControl = null;
             this.Aliment.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Aliment.ForeColor = System.Drawing.SystemColors.Control;
-            this.Aliment.Location = new System.Drawing.Point(60, 100);
+            this.Aliment.Location = new System.Drawing.Point(80, 123);
+            this.Aliment.Margin = new System.Windows.Forms.Padding(4);
             this.Aliment.Name = "Aliment";
-            this.Aliment.Size = new System.Drawing.Size(250, 250);
+            this.Aliment.Size = new System.Drawing.Size(333, 308);
             this.Aliment.Style = MetroFramework.MetroColorStyle.Yellow;
             this.Aliment.TabIndex = 2;
             this.Aliment.Text = "Aliment";
@@ -57,9 +58,10 @@
             // 
             this.metroTile1.ActiveControl = null;
             this.metroTile1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroTile1.Location = new System.Drawing.Point(375, 100);
+            this.metroTile1.Location = new System.Drawing.Point(500, 123);
+            this.metroTile1.Margin = new System.Windows.Forms.Padding(4);
             this.metroTile1.Name = "metroTile1";
-            this.metroTile1.Size = new System.Drawing.Size(250, 250);
+            this.metroTile1.Size = new System.Drawing.Size(333, 308);
             this.metroTile1.Style = MetroFramework.MetroColorStyle.Yellow;
             this.metroTile1.TabIndex = 3;
             this.metroTile1.Text = "Persoană";
@@ -74,14 +76,20 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 450);
+            this.ClientSize = new System.Drawing.Size(933, 554);
             this.Controls.Add(this.metroTile1);
             this.Controls.Add(this.Aliment);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "Form1";
+            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
+            this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Yellow;
             this.Text = "Tracker";
+            this.Theme = MetroFramework.MetroThemeStyle.Default;
+            this.TransparencyKey = System.Drawing.SystemColors.ControlLightLight;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 

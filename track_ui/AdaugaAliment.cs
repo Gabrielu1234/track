@@ -52,57 +52,57 @@ namespace track_ui
             int tip_produs = metroTipProdus.SelectedIndex + 1;
             if (string.IsNullOrEmpty(denumire))
             {
-                metroDenumire.ForeColor = Color.Red;
+                metroLabel1.ForeColor = Color.Red;
                 ok = 0;
             }
             else
             {
-                metroDenumire.ForeColor = Color.Yellow;
+                metroLabel1.ForeColor = Color.Black;
             }
             if (!int.TryParse(metroCalorii.Text, out calorii))
             {
-                metroCalorii.ForeColor = Color.Red;
+                metroLabel2.ForeColor = Color.Red;
                 ok = 0;
             }
             else
             {
-                metroCalorii.ForeColor = Color.Yellow;
+                metroLabel2.ForeColor = Color.Yellow;
             }
             if (!int.TryParse(metroProteine.Text, out proteine))
             {
-                metroProteine.ForeColor = Color.Red;
+                metroLabel3.ForeColor = Color.Red;
                 ok = 0;
             }
             else
             {
-                metroProteine.ForeColor = Color.Yellow;
+                metroLabel3.ForeColor = Color.Black;
             }
             if (!int.TryParse(metroCarbohidratii.Text, out carbohidrati))
             {
-                metroCarbohidratii.ForeColor = Color.Red;
+                metroLabel4.ForeColor = Color.Red;
                 ok = 0;
             }
             else
             {
-                metroCarbohidratii.ForeColor = Color.Yellow;
+                metroLabel4.ForeColor = Color.Black;
             }
             if (!int.TryParse(metroGrasimi.Text, out grasimi))
             {
-                metroGrasimi.ForeColor = Color.Red;
+                metroLabel5.ForeColor = Color.Red;
                 ok = 0;
             }
             else
             {
-                metroGrasimi.ForeColor = Color.Yellow;
+                metroLabel5.ForeColor = Color.Black;
             }
             if (metroTipProdus.SelectedIndex == -1)
             {
-                metroTipProdus.ForeColor = Color.Red;
+                metroLabel6.ForeColor = Color.Red;
                 ok = 0;
             }
             else
             {
-                metroTipProdus.ForeColor = Color.Yellow;
+                metroLabel6.ForeColor = Color.Black;
             }
 
             int calorii_calculate = proteine * 4 + carbohidrati * 4 + grasimi * 9;
@@ -154,6 +154,11 @@ namespace track_ui
             metroTipProdus.Items.Add("Bauturi");
             metroTipProdus.Items.Add("Altele");
             metroTipProdus.SelectedIndex = -1;
+
+        }
+
+        private void metroDenumire_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -42,15 +42,15 @@
             this.metroAfiseaza = new MetroFramework.Controls.MetroTile();
             this.metroAdauga = new MetroFramework.Controls.MetroTile();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
-            this.formAlimentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.formAlimentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.metroGridAliment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipProdusBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alimentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.administrareAlimentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.formAlimentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formAlimentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // metroButton1
@@ -101,6 +101,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.metroGridAliment.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.metroGridAliment.RowHeadersWidth = 51;
             this.metroGridAliment.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGridAliment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.metroGridAliment.Size = new System.Drawing.Size(658, 464);
@@ -110,6 +111,8 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(23, 63);
             this.pictureBox1.Name = "pictureBox1";
@@ -138,10 +141,10 @@
             this.metroAfiseaza.Size = new System.Drawing.Size(225, 50);
             this.metroAfiseaza.Style = MetroFramework.MetroColorStyle.White;
             this.metroAfiseaza.TabIndex = 7;
-            this.metroAfiseaza.Text = "Afisează Alimente";
-            this.metroAfiseaza.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.metroAfiseaza.Text = "   Afisează Alimente";
+            this.metroAfiseaza.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroAfiseaza.TileImage = ((System.Drawing.Image)(resources.GetObject("metroAfiseaza.TileImage")));
-            this.metroAfiseaza.TileImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.metroAfiseaza.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.metroAfiseaza.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroAfiseaza.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.metroAfiseaza.UseCustomForeColor = true;
@@ -160,9 +163,9 @@
             this.metroAdauga.Style = MetroFramework.MetroColorStyle.White;
             this.metroAdauga.TabIndex = 8;
             this.metroAdauga.Text = "Adaugă Aliment";
-            this.metroAdauga.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.metroAdauga.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroAdauga.TileImage = ((System.Drawing.Image)(resources.GetObject("metroAdauga.TileImage")));
-            this.metroAdauga.TileImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.metroAdauga.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.metroAdauga.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroAdauga.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.metroAdauga.UseCustomForeColor = true;
@@ -180,10 +183,10 @@
             this.metroTile1.Size = new System.Drawing.Size(225, 50);
             this.metroTile1.Style = MetroFramework.MetroColorStyle.White;
             this.metroTile1.TabIndex = 9;
-            this.metroTile1.Text = "Caută Aliment";
+            this.metroTile1.Text = "      Caută Aliment";
             this.metroTile1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.metroTile1.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile1.TileImage")));
-            this.metroTile1.TileImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.metroTile1.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.metroTile1.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroTile1.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.metroTile1.UseCustomForeColor = true;
@@ -191,10 +194,6 @@
             this.metroTile1.UseStyleColors = true;
             this.metroTile1.UseTileImage = true;
             this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click_2);
-            // 
-            // formAlimentBindingSource
-            // 
-            this.formAlimentBindingSource.DataSource = typeof(track_ui.FormAliment);
             // 
             // pictureBox2
             // 
@@ -204,6 +203,10 @@
             this.pictureBox2.Size = new System.Drawing.Size(122, 107);
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
+            // 
+            // formAlimentBindingSource
+            // 
+            this.formAlimentBindingSource.DataSource = typeof(track_ui.FormAliment);
             // 
             // FormAliment
             // 
@@ -218,7 +221,9 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroGridAliment);
             this.ForeColor = System.Drawing.Color.Gold;
+            this.MaximizeBox = false;
             this.Name = "FormAliment";
+            this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Yellow;
             this.Text = "Administrare Alimente";
             this.TransparencyKey = System.Drawing.Color.Empty;
@@ -228,8 +233,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tipProdusBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alimentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.administrareAlimentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.formAlimentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formAlimentBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

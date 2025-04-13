@@ -49,7 +49,7 @@ namespace track_ui
             }
             else
             {
-                metroLabel1.ForeColor = Color.Yellow;
+                metroLabel1.ForeColor = Color.Black;
             }
 
             if (!double.TryParse(metroCalorii.Text, out calorii_mentinere))
@@ -59,7 +59,7 @@ namespace track_ui
             }
             else
             {
-                metroLabel2.ForeColor = Color.Yellow;
+                metroLabel2.ForeColor = Color.Black;
             }
 
 
@@ -93,7 +93,7 @@ namespace track_ui
                 }
                 else
                 {
-                    metroLabel3.ForeColor = Color.Yellow;
+                    metroLabel3.ForeColor = Color.Black;
                 }
 
             
@@ -114,6 +114,14 @@ namespace track_ui
             {
                 MessageBox.Show("Datele introduse nu sunt valide!");
             }
+            metroNume.Text = "";
+            metroCalorii.Text = "";
+            metroCardio.Checked = false;
+            metroForta.Checked = false;
+            metroMobilitate.Checked = false;
+            metroSporturi.Checked = false;
+            metroAltele.Checked = false;
+
         }
     }
 }

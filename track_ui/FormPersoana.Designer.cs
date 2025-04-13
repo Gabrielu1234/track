@@ -72,10 +72,10 @@
             this.metroTile1.Name = "metroTile1";
             this.metroTile1.Size = new System.Drawing.Size(227, 50);
             this.metroTile1.TabIndex = 6;
-            this.metroTile1.Text = "Afisează Persoane";
-            this.metroTile1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.metroTile1.Text = "  Afisează Persoane";
+            this.metroTile1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile1.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile1.TileImage")));
-            this.metroTile1.TileImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.metroTile1.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.metroTile1.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroTile1.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.metroTile1.UseCustomBackColor = true;
@@ -94,9 +94,9 @@
             this.metroTile2.Style = MetroFramework.MetroColorStyle.White;
             this.metroTile2.TabIndex = 7;
             this.metroTile2.Text = "Adaugă Persoană";
-            this.metroTile2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.metroTile2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile2.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile2.TileImage")));
-            this.metroTile2.TileImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.metroTile2.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.metroTile2.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroTile2.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.metroTile2.UseCustomBackColor = true;
@@ -113,10 +113,10 @@
             this.metroTile3.Name = "metroTile3";
             this.metroTile3.Size = new System.Drawing.Size(227, 50);
             this.metroTile3.TabIndex = 8;
-            this.metroTile3.Text = "Caută Persoană";
+            this.metroTile3.Text = "     Caută Persoană";
             this.metroTile3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.metroTile3.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile3.TileImage")));
-            this.metroTile3.TileImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.metroTile3.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.metroTile3.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroTile3.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.metroTile3.UseCustomBackColor = true;
@@ -163,6 +163,7 @@
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.metroGridPersoana.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.metroGridPersoana.RowHeadersWidth = 51;
             this.metroGridPersoana.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGridPersoana.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.metroGridPersoana.Size = new System.Drawing.Size(863, 464);
@@ -191,7 +192,9 @@
             this.Controls.Add(this.metroTile1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroButton1);
+            this.MaximizeBox = false;
             this.Name = "FormPersoana";
+            this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Yellow;
             this.Text = "Administrare Persoane";
             this.Load += new System.EventHandler(this.FormPersoana_Load);

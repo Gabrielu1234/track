@@ -23,29 +23,8 @@ namespace track_ui
         public int top = 2;
         AdministrarePersoane adminPersoane;
 
-        private MetroLabel lblPersoane;
-        private MetroLabel lblpNume;
-        private MetroLabel lblpCaloriiConsumate;
-        private MetroLabel lblpProteineConsumate;
-        private MetroLabel lblpCarbohidratiConsumati;
-        private MetroLabel lblpGrasimiConsumate;
-        private MetroLabel lblpCaloriiMentinere;
-        private MetroLabel lblpMese;
-        private MetroLabel lblpActivitate;
-
-        private MetroLabel[] lblspNume;
-        private MetroLabel[] lblspCaloriiConsumate;
-        private MetroLabel[] lblspProteineConsumate;
-        private MetroLabel[] lblspCarbohidratiConsumati;
-        private MetroLabel[] lblspGrasimiConsumate;
-        private MetroLabel[] lblspCaloriiMentinere;
-        private MetroLabel[] lblspMese;
-        private MetroLabel[] lblspActivitate;
-
-        //Dimensiuni
-        private const int LATIME_CONTROL = 100;
-        private const int DIMENISUNE_PAS_Y = 30;
-        private const int DIMENSIUNE_PAS_X = 125;
+        public AdaugaPersoana adaugaPersoana;
+        public CautaPersoana cautaPersoana;
 
         public FormPersoana()
         {
@@ -56,183 +35,48 @@ namespace track_ui
             adminPersoane = new AdministrarePersoane(caleCompletaFisierPersoana);
 
             //setate proprietati
-            this.Size = new Size(800, 600);
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(100, 100);
             this.Font = new Font("Arial", 12, FontStyle.Regular);
             this.Theme = MetroFramework.MetroThemeStyle.Default;
-            this.Style = MetroFramework.MetroColorStyle.Yellow;
-            this.Text = "Persoane";
+
+            AdaugaPersoana adaugaPersoana = new AdaugaPersoana();
+            adaugaPersoana.Location = new Point(280, 63);
+            this.Controls.Add(adaugaPersoana);
+            adaugaPersoana.Hide();
+
+            CautaPersoana cautaPersoana = new CautaPersoana();
+            cautaPersoana.Location = new Point(280, 63);
+            this.Controls.Add(cautaPersoana);
+            cautaPersoana.Hide();
+
+
+
+
+        }
+        public void AfiseazaMetroGrid(List<Persoana> persoane)
+        {
+            metroGridPersoana.DataSource = null;
+
+            if (persoane != null && persoane.Any())
+            {
+                metroGridPersoana.DataSource = persoane.Select(s => new
+                {
+                    Denumire = s.nume,
+                    Calorii = s.calorii_consumate,
+                    Proteine = s.proteine_consumate,
+                    Carbohidratii =s.carbohidrati_consumati,
+                    Grasimi = s.grasimi_consumate,
+                    Mentinere = s.calorii_mentinere,
+                    Mese = s.mese,
+                    Activitate = s.GetActivitatiString(s.activitate)
+                }).ToList();
+            }
         }
 
         private void FormPersoana_Load(object sender, EventArgs e)
         {
-            AfisarePersoane();
-        }
-        private void AfisarePersoane()
-        {
-            Persoana[] persoane = adminPersoane.GetPersoane(out int nrPersoane);
-
-
-            //adauga o linie care sa scrie Persoane in mijloc
-            lblPersoane = new MetroLabel();
-            lblPersoane.Text = "Persoane";
-            lblPersoane.Width = LATIME_CONTROL;
-            lblPersoane.Left = 4 * DIMENSIUNE_PAS_X;
-            lblPersoane.Top = top * DIMENISUNE_PAS_Y;
-            lblPersoane.ForeColor = Color.Orange;
-            this.Controls.Add(lblPersoane);
-
-            top++;
-
-            //adaugare control tip MetroLabel pt nume
-            lblpNume = new MetroLabel();
-            lblpNume.Text = "Nume";
-            lblpNume.Width = LATIME_CONTROL;
-            lblpNume.Left = 1 * DIMENSIUNE_PAS_X;
-            lblpNume.Top = top * DIMENISUNE_PAS_Y;
-            lblpNume.ForeColor = Color.Red;
-            this.Controls.Add(lblpNume);
-
-            //adaugare control tip MetroLabel pt calorii consumate
-            lblpCaloriiConsumate = new MetroLabel();
-            lblpCaloriiConsumate.Text = "Calorii Cons.";
-            lblpCaloriiConsumate.Width = LATIME_CONTROL;
-            lblpCaloriiConsumate.Left = 2 * DIMENSIUNE_PAS_X;
-            lblpCaloriiConsumate.Top = top * DIMENISUNE_PAS_Y;
-            lblpCaloriiConsumate.ForeColor = Color.Red;
-            lblpCaloriiConsumate.AutoSize = true;
-            this.Controls.Add(lblpCaloriiConsumate);
-
-            //adaugare control tip MetroLabel pt proteine consumate
-            lblpProteineConsumate = new MetroLabel();
-            lblpProteineConsumate.Text = "Proteine Consumate";
-            lblpProteineConsumate.Width = LATIME_CONTROL;
-            lblpProteineConsumate.Left = 3 * DIMENSIUNE_PAS_X;
-            lblpProteineConsumate.Top = top * DIMENISUNE_PAS_Y;
-            lblpProteineConsumate.ForeColor = Color.Red;
-            this.Controls.Add(lblpProteineConsumate);
-
-            //adaugare control tip MetroLabel pt carbohidrati consumati
-            lblpCarbohidratiConsumati = new MetroLabel();
-            lblpCarbohidratiConsumati.Text = "Carbohidrati Consumati";
-            lblpCarbohidratiConsumati.Width = LATIME_CONTROL;
-            lblpCarbohidratiConsumati.Left = 4 * DIMENSIUNE_PAS_X;
-            lblpCarbohidratiConsumati.Top = top * DIMENISUNE_PAS_Y;
-            lblpCarbohidratiConsumati.ForeColor = Color.Red;
-            this.Controls.Add(lblpCarbohidratiConsumati);
-
-            //adaugare control tip MetroLabel pt grasimi consumate
-            lblpGrasimiConsumate = new MetroLabel();
-            lblpGrasimiConsumate.Text = "Grasimi Consumate";
-            lblpGrasimiConsumate.Width = LATIME_CONTROL;
-            lblpGrasimiConsumate.Left = 5 * DIMENSIUNE_PAS_X;
-            lblpGrasimiConsumate.Top = top * DIMENISUNE_PAS_Y;
-            lblpGrasimiConsumate.ForeColor = Color.Red;
-            this.Controls.Add(lblpGrasimiConsumate);
-
-            //adaugare control tip MetroLabel pt calorii mentinere
-            lblpCaloriiMentinere = new MetroLabel();
-            lblpCaloriiMentinere.Text = "Calorii Ment.";
-            lblpCaloriiMentinere.Width = LATIME_CONTROL;
-            lblpCaloriiMentinere.Left = 6 * DIMENSIUNE_PAS_X;
-            lblpCaloriiMentinere.Top = top * DIMENISUNE_PAS_Y;
-            lblpCaloriiMentinere.ForeColor = Color.Red;
-            lblpCaloriiMentinere.AutoSize = true;
-            this.Controls.Add(lblpCaloriiMentinere);
-
-            //adaugare control tip MetroLabel pt mese
-            lblpMese = new MetroLabel();
-            lblpMese.Text = "Mese";
-            lblpMese.Width = LATIME_CONTROL;
-            lblpMese.Left = 7 * DIMENSIUNE_PAS_X;
-            lblpMese.Top = top * DIMENISUNE_PAS_Y;
-            lblpMese.ForeColor = Color.Red;
-            this.Controls.Add(lblpMese);
-
-            //adaugare control tip MetroLabel pt activitate
-            lblpActivitate = new MetroLabel();
-            lblpActivitate.Text = "Activitate";
-            lblpActivitate.Width = LATIME_CONTROL;
-            lblpActivitate.Left = 8 * DIMENSIUNE_PAS_X;
-            lblpActivitate.Top = top * DIMENISUNE_PAS_Y;
-            lblpActivitate.ForeColor = Color.Red;
-            this.Controls.Add(lblpActivitate);
-
-            lblspNume = new MetroLabel[nrPersoane];
-            lblspCaloriiConsumate = new MetroLabel[nrPersoane];
-            lblspProteineConsumate = new MetroLabel[nrPersoane];
-            lblspCarbohidratiConsumati = new MetroLabel[nrPersoane];
-            lblspGrasimiConsumate = new MetroLabel[nrPersoane];
-            lblspCaloriiMentinere = new MetroLabel[nrPersoane];
-            lblspMese = new MetroLabel[nrPersoane];
-            lblspActivitate = new MetroLabel[nrPersoane];
-
-            top++;
-
-            int i = 0;
-            foreach (Persoana persoana in persoane)
-            {
-                //Nume
-                lblspNume[i] = new MetroLabel();
-                lblspNume[i].Width = LATIME_CONTROL;
-                lblspNume[i].Left = DIMENSIUNE_PAS_X;
-                lblspNume[i].Top = (i + top) * DIMENISUNE_PAS_Y;
-                lblspNume[i].Text = persoana.nume;
-                this.Controls.Add(lblspNume[i]);
-                //Calorii Consumate
-                lblspCaloriiConsumate[i] = new MetroLabel();
-                lblspCaloriiConsumate[i].Width = LATIME_CONTROL;
-                lblspCaloriiConsumate[i].Left = 2 * DIMENSIUNE_PAS_X;
-                lblspCaloriiConsumate[i].Top = (i + top) * DIMENISUNE_PAS_Y;
-                lblspCaloriiConsumate[i].Text = persoana.calorii_consumate.ToString();
-                this.Controls.Add(lblspCaloriiConsumate[i]);
-                //Proteine Consumate
-                lblspProteineConsumate[i] = new MetroLabel();
-                lblspProteineConsumate[i].Width = LATIME_CONTROL;
-                lblspProteineConsumate[i].Left = 3 * DIMENSIUNE_PAS_X;
-                lblspProteineConsumate[i].Top = (i + top) * DIMENISUNE_PAS_Y;
-                lblspProteineConsumate[i].Text = persoana.proteine_consumate.ToString();
-                this.Controls.Add(lblspProteineConsumate[i]);
-                //Carbohidrati Consumati
-                lblspCarbohidratiConsumati[i] = new MetroLabel();
-                lblspCarbohidratiConsumati[i].Width = LATIME_CONTROL;
-                lblspCarbohidratiConsumati[i].Left = 4 * DIMENSIUNE_PAS_X;
-                lblspCarbohidratiConsumati[i].Top = (i + top) * DIMENISUNE_PAS_Y;
-                lblspCarbohidratiConsumati[i].Text = persoana.carbohidrati_consumati.ToString();
-                this.Controls.Add(lblspCarbohidratiConsumati[i]);
-                //Grasimi Consumate
-                lblspGrasimiConsumate[i] = new MetroLabel();
-                lblspGrasimiConsumate[i].Width = LATIME_CONTROL;
-                lblspGrasimiConsumate[i].Left = 5 * DIMENSIUNE_PAS_X;
-                lblspGrasimiConsumate[i].Top = (i + top) * DIMENISUNE_PAS_Y;
-                lblspGrasimiConsumate[i].Text = persoana.grasimi_consumate.ToString();
-                this.Controls.Add(lblspGrasimiConsumate[i]);
-                //Calorii Mentinere
-                lblspCaloriiMentinere[i] = new MetroLabel();
-                lblspCaloriiMentinere[i].Width = LATIME_CONTROL;
-                lblspCaloriiMentinere[i].Left = 6 * DIMENSIUNE_PAS_X;
-                lblspCaloriiMentinere[i].Top = (i + top) * DIMENISUNE_PAS_Y;
-                lblspCaloriiMentinere[i].Text = persoana.calorii_mentinere.ToString();
-                this.Controls.Add(lblspCaloriiMentinere[i]);
-                //Mese
-                lblspMese[i] = new MetroLabel();
-                lblspMese[i].Width = LATIME_CONTROL;
-                lblspMese[i].Left = 7 * DIMENSIUNE_PAS_X;
-                lblspMese[i].Top = (i + top) * DIMENISUNE_PAS_Y;
-                lblspMese[i].Text = persoana.mese.ToString();
-                this.Controls.Add(lblspMese[i]);
-                //Activitate
-                lblspActivitate[i] = new MetroLabel();
-                lblspActivitate[i].Width = LATIME_CONTROL + 50;
-                lblspActivitate[i].Left = 8 * DIMENSIUNE_PAS_X;
-                lblspActivitate[i].Top = (i + top) * DIMENISUNE_PAS_Y;
-                lblspActivitate[i].Text = persoana.GetActivitatiString(persoana.activitate);
-                lblspActivitate[i].AutoSize = true;
-                this.Controls.Add(lblspActivitate[i]);
-
-                i++;
-            }
+            AfiseazaMetroGrid(adminPersoane.GetPersoane(out int nrPersoane).ToList());
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -242,5 +86,72 @@ namespace track_ui
             form1.Closed += (s, args) => this.Close();
             form1.Show();
         }
+
+        private void metroGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void metroTile1_Click(object sender, EventArgs e)
+        {
+            AfiseazaMetroGrid(adminPersoane.GetPersoane(out int nrPersoane).ToList());
+            metroGridPersoana.Show();
+            if (adaugaPersoana != null)
+            {
+                adaugaPersoana.Hide();
+            }
+            if (cautaPersoana != null)
+            {
+                cautaPersoana.Hide();
+            }
+
+        }
+
+        private void metroTile2_Click(object sender, EventArgs e)
+        {
+            metroGridPersoana.Hide();
+            if(adaugaPersoana!=null)
+            {
+                adaugaPersoana.Show();
+            }
+            else
+            {
+                adaugaPersoana = new AdaugaPersoana();
+                adaugaPersoana.Location = new Point(280, 63);
+                this.Controls.Add(adaugaPersoana);
+                adaugaPersoana.Show();
+            }
+            if (cautaPersoana != null)
+            {
+                cautaPersoana.Hide();
+            }
+
+
+        }
+        private void metroTile3_Click(object sender, EventArgs e)
+        {
+            metroGridPersoana.Hide();
+            if (adaugaPersoana != null)
+            {
+                adaugaPersoana.Hide();
+            }
+            if (cautaPersoana != null)
+            {
+                cautaPersoana.Show();
+            }
+            else
+            {
+                cautaPersoana = new CautaPersoana();
+                cautaPersoana.Location = new Point(280, 63);
+                this.Controls.Add(cautaPersoana);
+                cautaPersoana.Show();
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

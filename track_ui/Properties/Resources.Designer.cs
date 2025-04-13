@@ -63,6 +63,36 @@ namespace track_ui.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _94_943030_clip_royalty_free_stock_banana_icon_free_download {
+            get {
+                object obj = ResourceManager.GetObject("94-943030_clip-royalty-free-stock-banana-icon-free-download", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_banana_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-banana-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_banana_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-banana-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ui {
             get {
                 object obj = ResourceManager.GetObject("ui", resourceCulture);

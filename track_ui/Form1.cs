@@ -33,7 +33,16 @@ namespace track_ui
         }
 
 
-        private void metroButton1_Click(object sender, EventArgs e)
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var formapersoana = new FormPersoana();
+            formapersoana.Closed += (s, args) => this.Close();
+            formapersoana.Show();
+        }
+
+        private void metroTile1_Click(object sender, EventArgs e)
         {
             this.Hide();
             var formaliment = new FormAliment();
@@ -41,7 +50,7 @@ namespace track_ui
             formaliment.Show();
         }
 
-        private void metroButton2_Click(object sender, EventArgs e)
+        private void metroTile1_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             var formapersoana = new FormPersoana();

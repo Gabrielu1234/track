@@ -1,7 +1,0 @@
-1;Gabi;0;0;0;0;2300;0;Forta, Sporturi
-2;das;0;0;0;0;312512;0;Mobilitate, Altele
-3;das;0;0;0;0;312512;0;Mobilitate, Altele
-4;das;0;0;0;0;312512;0;Mobilitate, Altele
-5;ilie;0;0;0;0;512;0;Sporturi, Altele
-6;ilie;0;0;0;0;512;0;Sporturi, Altele
-7;ilie;0;0;0;0;512;0;Sporturi, Altele

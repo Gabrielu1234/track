@@ -31,6 +31,7 @@ namespace track_ui
 
         public AdaugaAliment adaugaAliment;
         public CautaAliment cautaAliment;
+        public EditAliment editAliment;
 
 
         public FormAliment()
@@ -61,6 +62,9 @@ namespace track_ui
             cautaAliment.Location = new Point(279, 63);
             this.Controls.Add(cautaAliment);
             cautaAliment.Hide();
+
+            
+
         }
 
         private void FormAliment_Load(object sender, EventArgs e)
@@ -76,6 +80,7 @@ namespace track_ui
             {
                 metroGridAliment.DataSource = alimente.Select(s => new
                 {
+                    ID = s.id_aliment,
                     Denumire = s.denumire,
                     Calorii = s.calorii,
                     Proteine = s.proteine,
@@ -133,6 +138,8 @@ namespace track_ui
             {
                 cautaAliment.Hide();
             }
+            if (editAliment != null)
+                editAliment.Hide();
 
         }
 
@@ -144,6 +151,8 @@ namespace track_ui
                 adaugaAliment.Hide();
             if (cautaAliment != null)
                 cautaAliment.Hide();
+            if (editAliment != null)
+                editAliment.Hide();
 
         }
 
@@ -164,12 +173,29 @@ namespace track_ui
                 adaugaAliment.Hide();
             if(metroGridAliment != null)
                 metroGridAliment.Hide();
+            if(editAliment != null)
+                editAliment.Hide();
 
 
         }
 
         private void metroGridAliment_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void metroTile2_Click(object sender, EventArgs e)
+        {
+            Aliment[] alimente = adminAliment.GetAlimente(out int nrAlimente);
+            int index = metroGridAliment.CurrentRow?.Index ?? -1;
+                if (index >= 0)
+                {
+                    Aliment selectedaliment = alimente[index];
+                    int id = selectedaliment.id_aliment;
+                    EditareAliment editAliment = new EditareAliment(id);
+                    editAliment.ShowDialog();
+                }
+            
 
         }
     }

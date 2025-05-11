@@ -132,6 +132,18 @@
     <Compile Include="CautaPersoana.Designer.cs">
       <DependentUpon>CautaPersoana.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditAliment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditAliment.Designer.cs">
+      <DependentUpon>EditAliment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditareAliment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditareAliment.Designer.cs">
+      <DependentUpon>EditareAliment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +175,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CautaPersoana.resx">
       <DependentUpon>CautaPersoana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditAliment.resx">
+      <DependentUpon>EditAliment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditareAliment.resx">
+      <DependentUpon>EditareAliment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

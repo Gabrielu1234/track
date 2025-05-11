@@ -161,5 +161,10 @@ namespace track_ui
         {
 
         }
+
+        private void metroTipProdus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

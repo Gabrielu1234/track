@@ -306,6 +306,7 @@
             this.metroTipProdus.UseCustomForeColor = true;
             this.metroTipProdus.UseSelectable = true;
             this.metroTipProdus.UseStyleColors = true;
+            this.metroTipProdus.SelectedIndexChanged += new System.EventHandler(this.metroTipProdus_SelectedIndexChanged);
             // 
             // metroTile1
             // 

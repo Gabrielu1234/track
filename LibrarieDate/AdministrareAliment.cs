@@ -56,6 +56,26 @@ namespace LibrarieDate
             Array.Resize(ref copie, nrAlimente);
             return copie;
         }
+        public void ModificaAliment(Aliment a)
+        {
+            Aliment[] alimente = GetAlimente(out int nrAlimente);
+            int id = a.id_aliment;
+            id--;
+            using (StreamWriter swFisierText = new StreamWriter(numeFisier, false))
+            {
+                for (int i = 0; i < nrAlimente; i++)
+                {
+                    if (alimente[i].id_aliment == id)
+                    {
+                        swFisierText.WriteLine(a.ConversieLaSir_PentruFisier());
+                    }
+                    else
+                    {
+                        swFisierText.WriteLine(alimente[i].ConversieLaSir_PentruFisier());
+                    }
+                }
+            }
+        }
         public string AfisareAlimente()
         {
             string s = "";

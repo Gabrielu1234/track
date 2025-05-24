@@ -132,6 +132,12 @@
     <Compile Include="CautaPersoana.Designer.cs">
       <DependentUpon>CautaPersoana.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConsumAlimentar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsumAlimentar.Designer.cs">
+      <DependentUpon>ConsumAlimentar.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditAliment.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -143,6 +149,12 @@
     </Compile>
     <Compile Include="EditareAliment.Designer.cs">
       <DependentUpon>EditareAliment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditarePersoana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarePersoana.Designer.cs">
+      <DependentUpon>EditarePersoana.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -176,11 +188,17 @@
     <EmbeddedResource Include="CautaPersoana.resx">
       <DependentUpon>CautaPersoana.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConsumAlimentar.resx">
+      <DependentUpon>ConsumAlimentar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditAliment.resx">
       <DependentUpon>EditAliment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditareAliment.resx">
       <DependentUpon>EditareAliment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarePersoana.resx">
+      <DependentUpon>EditarePersoana.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

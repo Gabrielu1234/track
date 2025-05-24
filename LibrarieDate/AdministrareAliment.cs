@@ -56,11 +56,37 @@ namespace LibrarieDate
             Array.Resize(ref copie, nrAlimente);
             return copie;
         }
+        public Aliment GetAlimentByIndex(int index)
+        {
+            try
+            {
+                // instructiunea 'using' va apela sr.Close()
+                using (StreamReader sr = new StreamReader(numeFisier))
+                {
+                    string line;
+                    //citeste cate o linie si creaza un obiect de tip Carte pe baza datelor din linia citita
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        Aliment aliment = new Aliment(line);
+                        if (aliment.id_aliment == index)
+                            return aliment;
+                    }
+                }
+            }
+            catch (IOException eIO)
+            {
+                throw new Exception("Eroare la deschiderea fisierului. Mesaj: " + eIO.Message);
+            }
+            catch (Exception eGen)
+            {
+                throw new Exception("Eroare generica. Mesaj: " + eGen.Message);
+            }
+            return null;
+        }
         public void ModificaAliment(Aliment a)
         {
             Aliment[] alimente = GetAlimente(out int nrAlimente);
             int id = a.id_aliment;
-            id--;
             using (StreamWriter swFisierText = new StreamWriter(numeFisier, false))
             {
                 for (int i = 0; i < nrAlimente; i++)
@@ -70,6 +96,20 @@ namespace LibrarieDate
                         swFisierText.WriteLine(a.ConversieLaSir_PentruFisier());
                     }
                     else
+                    {
+                        swFisierText.WriteLine(alimente[i].ConversieLaSir_PentruFisier());
+                    }
+                }
+            }
+        }
+        public void StergeAliment(Aliment a)
+        {
+            Aliment[] alimente = GetAlimente(out int nrAlimente);
+            using (StreamWriter swFisierText = new StreamWriter(numeFisier, false))
+            {
+                for (int i = 0; i < nrAlimente; i++)
+                {
+                    if (alimente[i].id_aliment != a.id_aliment)
                     {
                         swFisierText.WriteLine(alimente[i].ConversieLaSir_PentruFisier());
                     }

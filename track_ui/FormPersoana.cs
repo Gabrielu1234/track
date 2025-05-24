@@ -62,6 +62,7 @@ namespace track_ui
             {
                 metroGridPersoana.DataSource = persoane.Select(s => new
                 {
+                    Id = s.id_persoana,
                     Denumire = s.nume,
                     Calorii = s.calorii_consumate,
                     Proteine = s.proteine_consumate,
@@ -153,5 +154,28 @@ namespace track_ui
 
         }
 
+        private void metroTile4_Click(object sender, EventArgs e)
+        {
+            EditarePersoana editarePersoana = new EditarePersoana(Convert.ToInt32(metroGridPersoana.CurrentRow.Cells[0].Value));
+            editarePersoana.ShowDialog();
+            List<Persoana> persoane = adminPersoane.GetPersoane(out int nrPersoane).ToList();
+            AfiseazaMetroGrid(persoane);
+        }
+
+        private void metroTile5_Click(object sender, EventArgs e)
+        {
+            Persoana persoana = adminPersoane.GetPersoanaByIndex(Convert.ToInt32(metroGridPersoana.CurrentRow.Cells[0].Value));
+            adminPersoane.StergePersoanaFisier(persoana);
+            List<Persoana> persoane = adminPersoane.GetPersoane(out int nrPersoane).ToList();
+            AfiseazaMetroGrid(persoane);
+        }
+
+        private void metroTile6_Click(object sender, EventArgs e)
+        {
+            ConsumAlimentar consumAlimentar = new ConsumAlimentar(Convert.ToInt32(metroGridPersoana.CurrentRow.Cells[0].Value));
+            consumAlimentar.ShowDialog();
+            List<Persoana> persoane = adminPersoane.GetPersoane(out int nrPersoane).ToList();
+            AfiseazaMetroGrid(persoane);
+        }
     }
 }

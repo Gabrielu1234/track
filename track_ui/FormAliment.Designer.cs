@@ -43,6 +43,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tipProdusBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.alimentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.administrareAlimentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.formAlimentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.metroGridAliment)).BeginInit();
@@ -119,11 +120,14 @@
             this.metroTile2.TabIndex = 11;
             this.metroTile2.Text = "Editeaza Aliment";
             this.metroTile2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile2.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile2.TileImage")));
+            this.metroTile2.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.metroTile2.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroTile2.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.metroTile2.UseCustomBackColor = true;
             this.metroTile2.UseCustomForeColor = true;
             this.metroTile2.UseSelectable = true;
+            this.metroTile2.UseTileImage = true;
             this.metroTile2.Click += new System.EventHandler(this.metroTile2_Click);
             // 
             // pictureBox2
@@ -217,6 +221,22 @@
             // 
             this.alimentBindingSource.DataSource = typeof(LibrarieClase.Aliment);
             // 
+            // metroTile3
+            // 
+            this.metroTile3.ActiveControl = null;
+            this.metroTile3.Location = new System.Drawing.Point(37, 304);
+            this.metroTile3.Name = "metroTile3";
+            this.metroTile3.Size = new System.Drawing.Size(225, 50);
+            this.metroTile3.TabIndex = 12;
+            this.metroTile3.Text = "Șterge Aliment";
+            this.metroTile3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile3.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.metroTile3.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.metroTile3.UseCustomBackColor = true;
+            this.metroTile3.UseCustomForeColor = true;
+            this.metroTile3.UseSelectable = true;
+            this.metroTile3.Click += new System.EventHandler(this.metroTile3_Click);
+            // 
             // administrareAlimentBindingSource
             // 
             this.administrareAlimentBindingSource.DataSource = typeof(LibrarieDate.AdministrareAliment);
@@ -230,6 +250,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(1250, 550);
+            this.Controls.Add(this.metroTile3);
             this.Controls.Add(this.metroTile2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.metroTile1);
@@ -271,5 +292,6 @@
         private MetroFramework.Controls.MetroTile metroTile1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private MetroFramework.Controls.MetroTile metroTile2;
+        private MetroFramework.Controls.MetroTile metroTile3;
     }
 }

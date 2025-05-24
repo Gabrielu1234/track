@@ -1,2 +1,1 @@
-2;greg;20;1;1;1;Fructe
-2;gasda;20;1;1;1;Cereale
+1;das;100;20;1;1;Carne

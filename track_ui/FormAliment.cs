@@ -1,21 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using LibrarieClase;
+using LibrarieDate;
 using MetroFramework.Forms;
-using MetroFramework.Controls;
-using MetroFramework.Components;
-using System.ComponentModel;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
-using LibrarieClase;
-using LibrarieDate;
-using System.Configuration;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
-using SiticoneNetFrameworkUI;
+using System.Linq;
+using System.Windows.Forms;
 
 
 
@@ -186,16 +179,31 @@ namespace track_ui
 
         private void metroTile2_Click(object sender, EventArgs e)
         {
-            Aliment[] alimente = adminAliment.GetAlimente(out int nrAlimente);
-            int index = metroGridAliment.CurrentRow?.Index ?? -1;
-                if (index >= 0)
-                {
-                    Aliment selectedaliment = alimente[index];
-                    int id = selectedaliment.id_aliment;
-                    EditareAliment editAliment = new EditareAliment(id);
-                    editAliment.ShowDialog();
-                }
-            
+            //Aliment[] alimente = adminAliment.GetAlimente(out int nrAlimente);
+            //int index = metroGridAliment.CurrentRow?.Index ?? -1;
+            //if (index >= 0)
+            //{
+            //    Aliment selectedaliment = adminAliment.GetAlimenteByIndex(index, out int nrAlimente)[0];
+            //    int id = selectedaliment.id_aliment;
+            //    EditareAliment editAliment = new EditareAliment(id);
+            //    editAliment.ShowDialog();
+            //}
+            EditareAliment editAliment = new EditareAliment(Convert.ToInt32(metroGridAliment.CurrentRow.Cells[0].Value));
+            editAliment.ShowDialog();
+            List<Aliment> alimente = adminAliment.GetAlimente(out int nrAlimente).ToList();
+            AfiseazaMetroGrid(alimente);
+        }
+
+        private void metroTile3_Click(object sender, EventArgs e)
+        {
+            Aliment aliment = adminAliment.GetAlimentByIndex(Convert.ToInt32(metroGridAliment.CurrentRow.Cells[0].Value));
+            adminAliment.StergeAliment(aliment);
+            List<Aliment> alimente = adminAliment.GetAlimente(out int nrAlimente).ToList();
+            AfiseazaMetroGrid(alimente);
+        }
+
+        private void metroTile4_Click(object sender, EventArgs e)
+        {
 
         }
     }

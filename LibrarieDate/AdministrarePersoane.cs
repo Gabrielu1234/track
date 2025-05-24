@@ -72,6 +72,73 @@ namespace LibrarieDate
             Array.Resize(ref copie, nrPersoane);
             return copie;
         }
+        public Persoana GetPersoanaByIndex(int index)
+        {
+            try
+            {
+                // instructiunea 'using' va apela sr.Close()
+                using (StreamReader sr = new StreamReader(numeFisier))
+                {
+                    string line;
+                    //citeste cate o linie si creaza un obiect de tip Carte pe baza datelor din linia citita
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        Persoana persoana = new Persoana(line);
+                        if (persoana.id_persoana == index)
+                            return persoana;
+                    }
+                }
+            }
+            catch (IOException eIO)
+            {
+                throw new Exception("Eroare la deschiderea fisierului. Mesaj: " + eIO.Message);
+            }
+            catch (Exception eGen)
+            {
+                throw new Exception("Eroare generica. Mesaj: " + eGen.Message);
+            }
+            return null;
+        }
+        public void ModificaPersoana(Persoana p)
+        {
+            Persoana[] persoane = GetPersoane(out nrPersoane);
+            int id=p.id_persoana;
+            using(StreamWriter sw = new StreamWriter(numeFisier, false))
+            {
+                for (int i = 0; i < nrPersoane; i++)
+                {
+                    if (persoane[i].id_persoana == id)
+                    {
+                        sw.WriteLine(p.ConversieLaSir_PentruFisier());
+                    }
+                    else
+                    {
+                        sw.WriteLine(persoane[i].ConversieLaSir_PentruFisier());
+                    }
+                }
+            }
+        }
+        public void StergePersoanaFisier(Persoana p)
+        {
+            Persoana[] persoane = GetPersoane(out nrPersoane);
+            using (StreamWriter sw = new StreamWriter(numeFisier, false))
+            {
+                for (int i = 0; i < nrPersoane; i++)
+                {
+                    if (persoane[i].nume != p.nume)
+                    {
+                        sw.WriteLine(persoane[i].ConversieLaSir_PentruFisier());
+                    }
+                }
+            }
+        }
+        public void ManancaPersoana(Aliment aliment, Persoana p)
+        {
+            // adauga consumul de aliment la persoana
+            p = p.AdaugaConsum(aliment);
+            // actualizeaza persoana in fisier
+            ModificaPersoana(p);
+        }
         public string AfisarePersoane()
         {
             string s = "";

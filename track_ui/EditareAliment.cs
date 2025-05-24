@@ -1,21 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using MetroFramework.Forms;
-using MetroFramework.Controls;
-using MetroFramework.Components;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.IO;
-using LibrarieClase;
+﻿using LibrarieClase;
 using LibrarieDate;
+using MetroFramework.Forms;
+using System;
 using System.Configuration;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
-using SiticoneNetFrameworkUI;
+using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
 
 namespace track_ui
 {
@@ -35,54 +25,95 @@ namespace track_ui
         }
         private void SetareCampuri()
         {
-            Aliment[] alimente = adminAliment.GetAlimente(out int nrAlimente);
-            int id = int.Parse(lblID.Text);
-            id--;
-            if (alimente == null || id < 0 || id >= alimente.Length)
+            Aliment aliment = adminAliment.GetAlimentByIndex(int.Parse(lblID.Text));
+            if (aliment == null)
             {
                 MessageBox.Show("Alimentul nu exista!");
                 return;
             }
             else
             {
-                metroDenumire.Text = alimente[id].denumire.ToString();
-                metroCalorii.Text = alimente[id].calorii.ToString();
-                metroProteine.Text = alimente[id].proteine.ToString();
-                metroCarbohidratii.Text = alimente[id].carbohidrati.ToString();
-                metroGrasimi.Text = alimente[id].grasimi.ToString();
-                if (alimente[id].tip_produs == Aliment.TipProdus.Fructe)
+                metroDenumire.Text = aliment.denumire;
+                metroCalorii.Text = aliment.calorii.ToString();
+                metroProteine.Text = aliment.proteine.ToString();
+                metroCarbohidratii.Text = aliment.carbohidrati.ToString();
+                metroGrasimi.Text = aliment.grasimi.ToString();
+                switch (aliment.tip_produs)
                 {
-                    metroRadioButton1.Checked = true;
-                }
-                else if (alimente[id].tip_produs == Aliment.TipProdus.Legume)
-                {
-                    metroRadioButton2.Checked = true;
-                }
-                else if (alimente[id].tip_produs == Aliment.TipProdus.Carne)
-                {
-                    metroRadioButton3.Checked = true;
-                }
-                else if (alimente[id].tip_produs == Aliment.TipProdus.Lactate)
-                {
-                    metroRadioButton4.Checked = true;
-                }
-                else if (alimente[id].tip_produs == Aliment.TipProdus.Cereale)
-                {
-                    metroRadioButton5.Checked = true;
-                }
-                else if (alimente[id].tip_produs == Aliment.TipProdus.Dulciuri)
-                {
-                    metroRadioButton6.Checked = true;
-                }
-                else if (alimente[id].tip_produs == Aliment.TipProdus.Bauturi)
-                {
-                    metroRadioButton7.Checked = true;
-                }
-                else if (alimente[id].tip_produs == Aliment.TipProdus.Altele)
-                {
-                    metroRadioButton8.Checked = true;
+                    case Aliment.TipProdus.Fructe:
+                        metroRadioButton1.Checked = true;
+                        break;
+                    case Aliment.TipProdus.Legume:
+                        metroRadioButton2.Checked = true;
+                        break;
+                    case Aliment.TipProdus.Carne:
+                        metroRadioButton3.Checked = true;
+                        break;
+                    case Aliment.TipProdus.Lactate:
+                        metroRadioButton4.Checked = true;
+                        break;
+                    case Aliment.TipProdus.Cereale:
+                        metroRadioButton5.Checked = true;
+                        break;
+                    case Aliment.TipProdus.Dulciuri:
+                        metroRadioButton6.Checked = true;
+                        break;
+                    case Aliment.TipProdus.Bauturi:
+                        metroRadioButton7.Checked = true;
+                        break;
+                    case Aliment.TipProdus.Altele:
+                        metroRadioButton8.Checked = true;
+                        break;
                 }
             }
+            //Aliment[] alimente = adminAliment.GetAlimente(out int nrAlimente);
+            //int id = int.Parse(lblID.Text);
+            //id--;
+            //if (alimente == null || id < 0 || id >= alimente.Length)
+            //{
+            //    MessageBox.Show("Alimentul nu exista!");
+            //    return;
+            //}
+            //else
+            //{
+            //    metroDenumire.Text = alimente[id].denumire.ToString();
+            //    metroCalorii.Text = alimente[id].calorii.ToString();
+            //    metroProteine.Text = alimente[id].proteine.ToString();
+            //    metroCarbohidratii.Text = alimente[id].carbohidrati.ToString();
+            //    metroGrasimi.Text = alimente[id].grasimi.ToString();
+            //    if (alimente[id].tip_produs == Aliment.TipProdus.Fructe)
+            //    {
+            //        metroRadioButton1.Checked = true;
+            //    }
+            //    else if (alimente[id].tip_produs == Aliment.TipProdus.Legume)
+            //    {
+            //        metroRadioButton2.Checked = true;
+            //    }
+            //    else if (alimente[id].tip_produs == Aliment.TipProdus.Carne)
+            //    {
+            //        metroRadioButton3.Checked = true;
+            //    }
+            //    else if (alimente[id].tip_produs == Aliment.TipProdus.Lactate)
+            //    {
+            //        metroRadioButton4.Checked = true;
+            //    }
+            //    else if (alimente[id].tip_produs == Aliment.TipProdus.Cereale)
+            //    {
+            //        metroRadioButton5.Checked = true;
+            //    }
+            //    else if (alimente[id].tip_produs == Aliment.TipProdus.Dulciuri)
+            //    {
+            //        metroRadioButton6.Checked = true;
+            //    }
+            //    else if (alimente[id].tip_produs == Aliment.TipProdus.Bauturi)
+            //    {
+            //        metroRadioButton7.Checked = true;
+            //    }
+            //    else if (alimente[id].tip_produs == Aliment.TipProdus.Altele)
+            //    {
+            //        metroRadioButton8.Checked = true;
+            //    }
+            //}
         }
 
         private void EditareAliment_Load(object sender, EventArgs e)
@@ -185,27 +216,19 @@ namespace track_ui
                 ok = 0;
             }
 
-            Aliment[] alimente = adminAliment.GetAlimente(out int nrAlimente);
-            int id = int.Parse(lblID.Text);
-            if (alimente == null || id < 0 || id >= alimente.Length)
-            {
-                MessageBox.Show("Alimentul nu exista!");
-                return;
-            }
-            else
-            {
-                alimente[id].denumire = denumire;
-                alimente[id].calorii = calorii;
-                alimente[id].proteine = proteine;
-                alimente[id].carbohidrati = carbohidrati;
-                alimente[id].grasimi = grasimi;
-                alimente[id].tip_produs = tip_produs;
-            }
-            Aliment aliment = new Aliment(alimente[id].id_aliment, denumire, calorii, proteine, carbohidrati, grasimi, tip_produs);
+            Aliment aliment = new Aliment(int.Parse(lblID.Text), denumire, calorii, proteine, carbohidrati, grasimi, tip_produs);
             if (ok == 1)
             {
-                adminAliment.ModificaAliment(aliment);
-                MessageBox.Show("Aliment editat cu succes!");
+                try
+                {
+                    adminAliment.ModificaAliment(aliment);
+                    MessageBox.Show("Aliment editat cu succes!");
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Eroare la editarea alimentului: " + ex.Message);
+                }
             }
             else
             {

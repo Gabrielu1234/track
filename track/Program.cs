@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LibrarieClase;
+using LibrarieDate;
+using System;
 using System.Configuration;
 using System.IO;
-using LibrarieDate;
-using LibrarieClase;
-using System.ComponentModel;
 
 namespace Tracker
 {

@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using LibrarieClase;
+﻿using LibrarieClase;
 using LibrarieDate;
+using System;
 using System.Configuration;
+using System.Drawing;
 using System.IO;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace track_ui
 {
@@ -49,7 +44,39 @@ namespace track_ui
             int proteine;
             int carbohidrati;
             int grasimi;
-            int tip_produs = metroTipProdus.SelectedIndex + 1;
+            Aliment.TipProdus tipProdus;
+            if(metroCarne.Checked)
+            {
+                tipProdus = Aliment.TipProdus.Carne;
+            }
+            else if (metroLactate.Checked)
+            {
+                tipProdus = Aliment.TipProdus.Lactate;
+            }
+            else if (metroCereale.Checked)
+            {
+                tipProdus = Aliment.TipProdus.Cereale;
+            }
+            else if (metroDulciuri.Checked)
+            {
+                tipProdus = Aliment.TipProdus.Dulciuri;
+            }
+            else if (metroBauturi.Checked)
+            {
+                tipProdus = Aliment.TipProdus.Bauturi;
+            }
+            else if (metroLegume.Checked)
+            {
+                tipProdus = Aliment.TipProdus.Legume;
+            }
+            else if (metroFructe.Checked)
+            {
+                tipProdus = Aliment.TipProdus.Fructe;
+            }
+            else
+            {
+                tipProdus = Aliment.TipProdus.Altele;
+            }
             if (string.IsNullOrEmpty(denumire))
             {
                 metroLabel1.ForeColor = Color.Red;
@@ -95,14 +122,10 @@ namespace track_ui
             {
                 metroLabel5.ForeColor = Color.Black;
             }
-            if (metroTipProdus.SelectedIndex == -1)
+            if (tipProdus==null)
             {
-                metroLabel6.ForeColor = Color.Red;
+                MessageBox.Show("Selecteaza tipul de produs!");
                 ok = 0;
-            }
-            else
-            {
-                metroLabel6.ForeColor = Color.Black;
             }
 
             int calorii_calculate = proteine * 4 + carbohidrati * 4 + grasimi * 9;
@@ -123,7 +146,7 @@ namespace track_ui
                 nextId = 1;
             }
 
-            Aliment aliment = new Aliment(nextId, denumire, calorii, proteine, carbohidrati, grasimi, (Aliment.TipProdus)tip_produs);
+            Aliment aliment = new Aliment(nextId, denumire, calorii, proteine, carbohidrati, grasimi, tipProdus);
             if (ok == 1)
             {
                 adminAliment.AdaugaAliment(aliment);
@@ -138,22 +161,12 @@ namespace track_ui
             metroProteine.Text = "";
             metroCarbohidratii.Text = "";
             metroGrasimi.Text = "";
-            metroTipProdus.SelectedIndex = -1;
+            groupTipProdus.Controls.OfType<RadioButton>().ToList().ForEach(r => r.Checked = false);
 
         }
 
         private void AdaugaAliment_Load(object sender, EventArgs e)
         {
-            //aduga optiuni in comboBox
-            metroTipProdus.Items.Add("Fructe");
-            metroTipProdus.Items.Add("Legume");
-            metroTipProdus.Items.Add("Carne");
-            metroTipProdus.Items.Add("Lactate");
-            metroTipProdus.Items.Add("Cereale");
-            metroTipProdus.Items.Add("Dulciuri");
-            metroTipProdus.Items.Add("Bauturi");
-            metroTipProdus.Items.Add("Altele");
-            metroTipProdus.SelectedIndex = -1;
 
         }
 
@@ -163,6 +176,11 @@ namespace track_ui
         }
 
         private void metroTipProdus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroCarne_CheckedChanged(object sender, EventArgs e)
         {
 
         }

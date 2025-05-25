@@ -66,54 +66,6 @@ namespace track_ui
                         break;
                 }
             }
-            //Aliment[] alimente = adminAliment.GetAlimente(out int nrAlimente);
-            //int id = int.Parse(lblID.Text);
-            //id--;
-            //if (alimente == null || id < 0 || id >= alimente.Length)
-            //{
-            //    MessageBox.Show("Alimentul nu exista!");
-            //    return;
-            //}
-            //else
-            //{
-            //    metroDenumire.Text = alimente[id].denumire.ToString();
-            //    metroCalorii.Text = alimente[id].calorii.ToString();
-            //    metroProteine.Text = alimente[id].proteine.ToString();
-            //    metroCarbohidratii.Text = alimente[id].carbohidrati.ToString();
-            //    metroGrasimi.Text = alimente[id].grasimi.ToString();
-            //    if (alimente[id].tip_produs == Aliment.TipProdus.Fructe)
-            //    {
-            //        metroRadioButton1.Checked = true;
-            //    }
-            //    else if (alimente[id].tip_produs == Aliment.TipProdus.Legume)
-            //    {
-            //        metroRadioButton2.Checked = true;
-            //    }
-            //    else if (alimente[id].tip_produs == Aliment.TipProdus.Carne)
-            //    {
-            //        metroRadioButton3.Checked = true;
-            //    }
-            //    else if (alimente[id].tip_produs == Aliment.TipProdus.Lactate)
-            //    {
-            //        metroRadioButton4.Checked = true;
-            //    }
-            //    else if (alimente[id].tip_produs == Aliment.TipProdus.Cereale)
-            //    {
-            //        metroRadioButton5.Checked = true;
-            //    }
-            //    else if (alimente[id].tip_produs == Aliment.TipProdus.Dulciuri)
-            //    {
-            //        metroRadioButton6.Checked = true;
-            //    }
-            //    else if (alimente[id].tip_produs == Aliment.TipProdus.Bauturi)
-            //    {
-            //        metroRadioButton7.Checked = true;
-            //    }
-            //    else if (alimente[id].tip_produs == Aliment.TipProdus.Altele)
-            //    {
-            //        metroRadioButton8.Checked = true;
-            //    }
-            //}
         }
 
         private void EditareAliment_Load(object sender, EventArgs e)

@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using LibrarieClase;
+﻿using LibrarieClase;
 using LibrarieDate;
+using System;
+using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.IO;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace track_ui
 {
@@ -47,12 +43,12 @@ namespace track_ui
 
             if (aliment != null)
             {
-                //il introduce in grid
                 List<Aliment> listaAlimente = new List<Aliment>();
                 listaAlimente.Add(aliment);
                 metroGridAliment.DataSource = null;
                 metroGridAliment.DataSource = listaAlimente.Select(s => new
                 {
+                    ID = s.id_aliment,
                     Denumire = s.denumire,
                     Calorii = s.calorii,
                     Proteine = s.proteine,

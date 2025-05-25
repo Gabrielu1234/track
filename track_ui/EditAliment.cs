@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using LibrarieClase;
+﻿using LibrarieClase;
 using LibrarieDate;
+using System;
 using System.Configuration;
+using System.Drawing;
 using System.IO;
+using System.Windows.Forms;
 
 namespace track_ui
 {
@@ -144,7 +138,6 @@ namespace track_ui
             {
                 metroLabel5.ForeColor = Color.Black;
             }
-            // Verificare tip produs radiobx
             if (metroRadioButton1.Checked)
             {
                 tip_produs = Aliment.TipProdus.Fructe;

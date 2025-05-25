@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LibrarieClase
 {
@@ -32,12 +28,12 @@ namespace LibrarieClase
 
         public int id_persoana { get; set; }
         public string nume { get; set; }
-        public double calorii_consumate { get; set; } ///incepe de la 0, creste cu ce mananca;
+        public double calorii_consumate { get; set; } 
         public double proteine_consumate { get; set; }
         public double carbohidrati_consumati { get; set; }
         public double grasimi_consumate { get; set; }
-        public double calorii_mentinere { get; set; } ///o sa fie comparat cu cele consumate
-        public int mese { get; set; } ///o sa fie incrementat
+        public double calorii_mentinere { get; set; } 
+        public int mese { get; set; } 
         public TipActivitate activitate { get; set; }
 
 
@@ -85,7 +81,6 @@ namespace LibrarieClase
             return obiectPersoana;
 
         }
-        //modifica bine valorile :D
         public Persoana AdaugaConsum(Aliment a)
         {
             calorii_consumate += a.calorii;

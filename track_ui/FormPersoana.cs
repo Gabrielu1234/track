@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using LibrarieClase;
+using LibrarieDate;
 using MetroFramework.Forms;
-using MetroFramework.Controls;
-using MetroFramework.Components;
-using System.ComponentModel;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
-using LibrarieClase;
-using LibrarieDate;
-using System.Configuration;
+using System.Linq;
+using System.Windows.Forms;
 
 
 namespace track_ui
@@ -73,6 +68,13 @@ namespace track_ui
                     Activitate = s.GetActivitatiString(s.activitate)
                 }).ToList();
             }
+            foreach(DataGridViewRow row in metroGridPersoana.Rows)
+            {
+                if (Convert.ToInt32(row.Cells["Calorii"].Value) > Convert.ToInt32(row.Cells["Mentinere"].Value))
+                {
+                    row.DefaultCellStyle.Font = new Font("Arial", 12, FontStyle.Bold);
+                }
+            }
         }
 
         private void FormPersoana_Load(object sender, EventArgs e)
@@ -95,6 +97,9 @@ namespace track_ui
 
         private void metroTile1_Click(object sender, EventArgs e)
         {
+            this.Size = new Size(1400, 475);
+            this.Location = new Point(100, 100);
+            this.Text = "Administrare Persoane";
             AfiseazaMetroGrid(adminPersoane.GetPersoane(out int nrPersoane).ToList());
             metroGridPersoana.Show();
             if (adaugaPersoana != null)
@@ -110,6 +115,9 @@ namespace track_ui
 
         private void metroTile2_Click(object sender, EventArgs e)
         {
+            this.Size = new Size(700, 475);
+            this.Location = new Point(400, 100);
+            this.Text = "Adauga Persoana";
             metroGridPersoana.Hide();
             if(adaugaPersoana!=null)
             {
@@ -131,6 +139,9 @@ namespace track_ui
         }
         private void metroTile3_Click(object sender, EventArgs e)
         {
+            this.Size = new Size(1400, 475);
+            this.Location = new Point(100, 100);
+            this.Text = "Cauta Persoana";
             metroGridPersoana.Hide();
             if (adaugaPersoana != null)
             {

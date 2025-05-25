@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LibrarieClase;
+using System;
 using System.IO;
-using LibrarieClase;
 
 namespace LibrarieDate
 {
@@ -26,15 +22,6 @@ namespace LibrarieDate
             Stream streamFisierText = File.Open(numeFisier, FileMode.OpenOrCreate);
             streamFisierText.Close();
         }
-        /*
-        public void AdaugaPersoana(Persoana p)
-        {
-            using (StreamWriter swFisierText = new StreamWriter(numeFisier, true))
-            {
-                swFisierText.WriteLine(p.id_persoana + ";" + p.nume + ";" + p.calorii_consumate + ";" + p.proteine_consumate + ";" + p.carbohidrati_consumati + ";" + p.grasimi_consumate + ";" + p.calorii_mentinere + ";" + p.mese);
-            }
-        }
-        */
         public void AdaugaPersoana(Persoana p)
         {
             using (StreamWriter swFisierText = new StreamWriter(numeFisier, true))
@@ -42,7 +29,6 @@ namespace LibrarieDate
                 swFisierText.WriteLine(p.ConversieLaSir_PentruFisier());
             }
         }
-        // nu pune obiectul modificat bine in fisier
         public void ModificarePersoanaFisier(Persoana p)
         {
             using (StreamWriter sw = new StreamWriter(numeFisier, true))
@@ -76,11 +62,9 @@ namespace LibrarieDate
         {
             try
             {
-                // instructiunea 'using' va apela sr.Close()
                 using (StreamReader sr = new StreamReader(numeFisier))
                 {
                     string line;
-                    //citeste cate o linie si creaza un obiect de tip Carte pe baza datelor din linia citita
                     while ((line = sr.ReadLine()) != null)
                     {
                         Persoana persoana = new Persoana(line);
@@ -134,9 +118,7 @@ namespace LibrarieDate
         }
         public void ManancaPersoana(Aliment aliment, Persoana p)
         {
-            // adauga consumul de aliment la persoana
             p = p.AdaugaConsum(aliment);
-            // actualizeaza persoana in fisier
             ModificaPersoana(p);
         }
         public string AfisarePersoane()
@@ -148,19 +130,6 @@ namespace LibrarieDate
             }
             return s;
         }
-        /*
-        public Persoana CautarePersoana(string nume)
-        {
-            for (int i = 0; i < nrPersoane; i++)
-            {
-                if (persoane[i].nume == nume)
-                {
-                    return persoane[i];
-                }
-            }
-            return null;
-        }
-        */
         public Persoana CautarePersoanaFisier(string nume)
         {
             using (StreamReader sr = new StreamReader(numeFisier))

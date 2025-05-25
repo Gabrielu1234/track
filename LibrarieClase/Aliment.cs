@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LibrarieClase
 {
@@ -33,7 +28,7 @@ namespace LibrarieClase
 
         public int id_aliment { get; set; }
         public string denumire { get; set; } 
-        public double calorii { get; set; } ///=proteine*4+carbohidrati*4+grasimi*9
+        public double calorii { get; set; } 
         public double proteine { get; set; } 
         public double carbohidrati { get; set; } 
         public double grasimi { get; set; } 

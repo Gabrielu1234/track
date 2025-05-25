@@ -57,9 +57,9 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(1104, 497);
+            this.metroButton1.Location = new System.Drawing.Point(23, 380);
             this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(123, 30);
+            this.metroButton1.Size = new System.Drawing.Size(250, 30);
             this.metroButton1.TabIndex = 0;
             this.metroButton1.Text = "Înapoi";
             this.metroButton1.UseSelectable = true;
@@ -106,7 +106,7 @@
             this.metroGridAliment.RowHeadersWidth = 51;
             this.metroGridAliment.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGridAliment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGridAliment.Size = new System.Drawing.Size(819, 464);
+            this.metroGridAliment.Size = new System.Drawing.Size(819, 347);
             this.metroGridAliment.Style = MetroFramework.MetroColorStyle.Yellow;
             this.metroGridAliment.TabIndex = 6;
             this.metroGridAliment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.metroGridAliment_CellContentClick_1);
@@ -209,7 +209,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(23, 63);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(250, 464);
+            this.pictureBox1.Size = new System.Drawing.Size(250, 311);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
@@ -230,11 +230,14 @@
             this.metroTile3.TabIndex = 12;
             this.metroTile3.Text = "Șterge Aliment";
             this.metroTile3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile3.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile3.TileImage")));
+            this.metroTile3.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.metroTile3.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroTile3.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.metroTile3.UseCustomBackColor = true;
             this.metroTile3.UseCustomForeColor = true;
             this.metroTile3.UseSelectable = true;
+            this.metroTile3.UseTileImage = true;
             this.metroTile3.Click += new System.EventHandler(this.metroTile3_Click);
             // 
             // administrareAlimentBindingSource
@@ -249,7 +252,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(1250, 550);
+            this.ClientSize = new System.Drawing.Size(1250, 425);
             this.Controls.Add(this.metroTile3);
             this.Controls.Add(this.metroTile2);
             this.Controls.Add(this.pictureBox2);

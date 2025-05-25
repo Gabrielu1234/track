@@ -19,7 +19,6 @@ namespace track_ui
     public partial class FormAliment: MetroForm
     {
         public int top = 2;
-        //Aliment
         AdministrareAliment adminAliment;
 
         public AdaugaAliment adaugaAliment;
@@ -115,6 +114,9 @@ namespace track_ui
 
         private void metroTile1_Click_1(object sender, EventArgs e)
         {
+            this.Size = new Size(800, 425);
+            this.Location = new Point(400, 100);
+            this.Text = "Adauga Aliment";
             metroGridAliment.Hide();
             if (adaugaAliment != null)
             {
@@ -138,6 +140,9 @@ namespace track_ui
 
         private void metroAfiseaza_Click_1(object sender, EventArgs e)
         {
+            this.Size = new Size(1250, 425);
+            this.Location = new Point(100, 100);
+            this.Text = "Administrare Alimente";
             AfiseazaMetroGrid(adminAliment.GetAlimente(out int nrAlimente).ToList());
             metroGridAliment.Show();
             if (adaugaAliment != null)
@@ -151,6 +156,9 @@ namespace track_ui
 
         private void metroTile1_Click_2(object sender, EventArgs e)
         {
+            this.Size = new Size(1250, 425);
+            this.Location = new Point(100, 100);
+            this.Text = "Cauta Aliment";
             if (cautaAliment != null)
             {
                 cautaAliment.Show();
@@ -179,15 +187,6 @@ namespace track_ui
 
         private void metroTile2_Click(object sender, EventArgs e)
         {
-            //Aliment[] alimente = adminAliment.GetAlimente(out int nrAlimente);
-            //int index = metroGridAliment.CurrentRow?.Index ?? -1;
-            //if (index >= 0)
-            //{
-            //    Aliment selectedaliment = adminAliment.GetAlimenteByIndex(index, out int nrAlimente)[0];
-            //    int id = selectedaliment.id_aliment;
-            //    EditareAliment editAliment = new EditareAliment(id);
-            //    editAliment.ShowDialog();
-            //}
             EditareAliment editAliment = new EditareAliment(Convert.ToInt32(metroGridAliment.CurrentRow.Cells[0].Value));
             editAliment.ShowDialog();
             List<Aliment> alimente = adminAliment.GetAlimente(out int nrAlimente).ToList();

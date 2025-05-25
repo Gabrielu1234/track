@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using LibrarieClase;
-using static LibrarieClase.Persoana;
+﻿using LibrarieClase;
 using LibrarieDate;
+using System;
+using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace track_ui
 {
@@ -88,15 +82,9 @@ namespace track_ui
 
                 if (activitate == Persoana.TipActivitate.Niciuna)
                 {
-                    metroLabel3.ForeColor = Color.Red;
+                    MessageBox.Show("Selecteaza cel putin o activitate fizica!");
                     ok = 0;
                 }
-                else
-                {
-                    metroLabel3.ForeColor = Color.Black;
-                }
-
-            
 
             if (ok == 1)
             {
@@ -123,5 +111,11 @@ namespace track_ui
             metroAltele.Checked = false;
 
         }
+
+        private void metroSporturi_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

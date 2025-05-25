@@ -1,7 +1,5 @@
-﻿using System;
-using LibrarieClase;
+﻿using LibrarieClase;
 using LibrarieDate;
-using MetroFramework.Forms;
 using System;
 using System.Configuration;
 using System.Drawing;
@@ -36,7 +34,18 @@ namespace track_ui
             {
                 TextNume.Text = persoana.nume;
                 TextCalorii.Text = persoana.calorii_mentinere.ToString();
-
+                foreach (var activitati in groupActivitate.Controls)
+                {
+                    if (activitati is CheckBox)
+                    {
+                        var activitatebox = activitati as CheckBox;
+                        if (Enum.TryParse<Persoana.TipActivitate>(activitatebox.Text, out var activitateEnum) &&
+                            persoana.activitate.HasFlag(activitateEnum))
+                        {
+                            activitatebox.Checked = true;
+                        }
+                    }
+                }
             }
         }
 
@@ -68,7 +77,30 @@ namespace track_ui
             {
                 metroCalorii.ForeColor = Color.Black;
             }
+            Persoana persoanafolosita = adminPersoane.GetPersoanaByIndex(int.Parse(lblID.Text));
+
             Persoana persoana = new Persoana(int.Parse(lblID.Text), nume, calorii);
+            persoana.calorii_consumate = persoanafolosita.calorii_consumate;
+            persoana.proteine_consumate = persoanafolosita.proteine_consumate;
+            persoana.carbohidrati_consumati = persoanafolosita.carbohidrati_consumati;
+            persoana.grasimi_consumate = persoanafolosita.grasimi_consumate;
+            persoana.mese = persoanafolosita.mese; 
+
+            foreach (var activitati in groupActivitate.Controls)
+            {
+                if (activitati is CheckBox)
+                {
+                    var activitatebox = activitati as CheckBox;
+                    if (activitatebox.Checked)
+                    {
+                        // Convert the string to the enum value
+                        if (Enum.TryParse<Persoana.TipActivitate>(activitatebox.Text, out var activitateEnum))
+                        {
+                            persoana.activitate |= activitateEnum; 
+                        }
+                    }
+                }
+            }
             if (ok == 1)
             {
                 try
@@ -87,6 +119,11 @@ namespace track_ui
                 MessageBox.Show("Datele introduse nu sunt valide!");
 
             }
+        }
+
+        private void metroMobilitate_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

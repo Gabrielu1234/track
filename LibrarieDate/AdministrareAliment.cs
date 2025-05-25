@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LibrarieClase;
+using System;
 using System.IO;
-using LibrarieClase;
 
 namespace LibrarieDate
 {
@@ -25,15 +21,6 @@ namespace LibrarieDate
             Stream streamFisierText = File.Open(numeFisier, FileMode.OpenOrCreate);
             streamFisierText.Close();
         }
-        /*
-        public void AdaugaAliment(Aliment a)
-        {
-            using (StreamWriter swFisierText = new StreamWriter(numeFisier, true))
-            {
-                swFisierText.WriteLine(a.id_aliment + ";" + a.denumire + ";" + a.calorii + ";" + a.proteine + ";" + a.carbohidrati + ";" + a.grasimi + ";" + a.tip_produs);
-            }
-        }
-        */
         public void AdaugaAliment(Aliment a)
         {
             using (StreamWriter swFisierText = new StreamWriter(numeFisier, true))
@@ -60,11 +47,9 @@ namespace LibrarieDate
         {
             try
             {
-                // instructiunea 'using' va apela sr.Close()
                 using (StreamReader sr = new StreamReader(numeFisier))
                 {
                     string line;
-                    //citeste cate o linie si creaza un obiect de tip Carte pe baza datelor din linia citita
                     while ((line = sr.ReadLine()) != null)
                     {
                         Aliment aliment = new Aliment(line);
@@ -125,19 +110,6 @@ namespace LibrarieDate
             }
             return s;
         }
-        /*
-        public Aliment CautareAliment(string denumire)
-        {
-            for (int i = 0; i < nrAlimente; i++)
-            {
-                if (alimente[i].denumire == denumire)
-                {
-                    return alimente[i];
-                }
-            }
-            return null;
-        }
-        */
         public Aliment CautareAlimentFisier(string denumire)
         {
             using (StreamReader sr = new StreamReader(numeFisier))

@@ -116,9 +116,9 @@ namespace LibrarieDate
                 }
             }
         }
-        public void ManancaPersoana(Aliment aliment, Persoana p)
+        public void ManancaPersoana(Aliment aliment, Persoana p,float grame)
         {
-            p = p.AdaugaConsum(aliment);
+            p = p.AdaugaConsum(aliment,grame);
             ModificaPersoana(p);
         }
         public string AfisarePersoane()

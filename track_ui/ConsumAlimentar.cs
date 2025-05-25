@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Windows;
 
 namespace track_ui
 {
@@ -53,7 +54,14 @@ namespace track_ui
         {
             Aliment alimentSelectat = administrareAliment.GetAlimentByIndex(Convert.ToInt32(metroGridAliment.CurrentRow.Cells[0].Value));
             Persoana persoanaSelectata = administrarePersoane.GetPersoanaByIndex(Convert.ToInt32(lblID.Text));
-            administrarePersoane.ManancaPersoana(alimentSelectat, persoanaSelectata);
+            if (TextGrame.Text == string.Empty)
+            {
+                MessageBox.Show("Trebuie sa introduci numarul de grame consumate!");
+            }
+            else
+            {
+                administrarePersoane.ManancaPersoana(alimentSelectat, persoanaSelectata, Convert.ToSingle(TextGrame.Text));
+            }
             this.Close();
 
         }

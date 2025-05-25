@@ -81,12 +81,12 @@ namespace LibrarieClase
             return obiectPersoana;
 
         }
-        public Persoana AdaugaConsum(Aliment a)
+        public Persoana AdaugaConsum(Aliment a,float grame)
         {
-            calorii_consumate += a.calorii;
-            proteine_consumate += a.proteine;
-            carbohidrati_consumati += a.carbohidrati;
-            grasimi_consumate += a.grasimi;
+            calorii_consumate += a.calorii * (grame/100);
+            proteine_consumate += a.proteine * (grame/100);
+            carbohidrati_consumati += a.carbohidrati * (grame / 100);
+            grasimi_consumate += a.grasimi * (grame / 100);
             mese++;
             return this;
         }

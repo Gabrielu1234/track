@@ -186,10 +186,10 @@
             // 
             // 
             this.metroGrasimi.CustomButton.Image = null;
-            this.metroGrasimi.CustomButton.Location = new System.Drawing.Point(41, 1);
+            this.metroGrasimi.CustomButton.Location = new System.Drawing.Point(51, 1);
             this.metroGrasimi.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroGrasimi.CustomButton.Name = "";
-            this.metroGrasimi.CustomButton.Size = new System.Drawing.Size(28, 26);
+            this.metroGrasimi.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.metroGrasimi.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroGrasimi.CustomButton.TabIndex = 1;
             this.metroGrasimi.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -220,10 +220,10 @@
             // 
             // 
             this.metroCarbohidratii.CustomButton.Image = null;
-            this.metroCarbohidratii.CustomButton.Location = new System.Drawing.Point(84, 1);
+            this.metroCarbohidratii.CustomButton.Location = new System.Drawing.Point(65, 1);
             this.metroCarbohidratii.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroCarbohidratii.CustomButton.Name = "";
-            this.metroCarbohidratii.CustomButton.Size = new System.Drawing.Size(28, 26);
+            this.metroCarbohidratii.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.metroCarbohidratii.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroCarbohidratii.CustomButton.TabIndex = 1;
             this.metroCarbohidratii.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -254,10 +254,10 @@
             // 
             // 
             this.metroProteine.CustomButton.Image = null;
-            this.metroProteine.CustomButton.Location = new System.Drawing.Point(49, 1);
+            this.metroProteine.CustomButton.Location = new System.Drawing.Point(57, 1);
             this.metroProteine.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroProteine.CustomButton.Name = "";
-            this.metroProteine.CustomButton.Size = new System.Drawing.Size(28, 26);
+            this.metroProteine.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.metroProteine.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroProteine.CustomButton.TabIndex = 1;
             this.metroProteine.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -291,7 +291,7 @@
             this.metroCalorii.CustomButton.Location = new System.Drawing.Point(33, 1);
             this.metroCalorii.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroCalorii.CustomButton.Name = "";
-            this.metroCalorii.CustomButton.Size = new System.Drawing.Size(28, 26);
+            this.metroCalorii.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.metroCalorii.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroCalorii.CustomButton.TabIndex = 1;
             this.metroCalorii.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -322,10 +322,10 @@
             // 
             // 
             this.metroDenumire.CustomButton.Image = null;
-            this.metroDenumire.CustomButton.Location = new System.Drawing.Point(60, 1);
+            this.metroDenumire.CustomButton.Location = new System.Drawing.Point(45, 1);
             this.metroDenumire.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroDenumire.CustomButton.Name = "";
-            this.metroDenumire.CustomButton.Size = new System.Drawing.Size(28, 26);
+            this.metroDenumire.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.metroDenumire.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroDenumire.CustomButton.TabIndex = 1;
             this.metroDenumire.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -421,7 +421,7 @@
             this.groupTipAliment.Controls.Add(this.metroRadioButton6);
             this.groupTipAliment.Controls.Add(this.metroRadioButton2);
             this.groupTipAliment.Controls.Add(this.metroRadioButton7);
-            this.groupTipAliment.Location = new System.Drawing.Point(29, 155);
+            this.groupTipAliment.Location = new System.Drawing.Point(29, 169);
             this.groupTipAliment.Name = "groupTipAliment";
             this.groupTipAliment.Size = new System.Drawing.Size(389, 84);
             this.groupTipAliment.TabIndex = 59;

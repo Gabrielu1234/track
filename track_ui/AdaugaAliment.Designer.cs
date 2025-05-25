@@ -50,6 +50,7 @@
             this.metroCereale = new MetroFramework.Controls.MetroRadioButton();
             this.metroLactate = new MetroFramework.Controls.MetroRadioButton();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.groupTipProdus.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +58,7 @@
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.ForeColor = System.Drawing.Color.Black;
-            this.metroLabel1.Location = new System.Drawing.Point(103, 0);
+            this.metroLabel1.Location = new System.Drawing.Point(31, 0);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(71, 20);
             this.metroLabel1.Style = MetroFramework.MetroColorStyle.Yellow;
@@ -69,7 +70,7 @@
             // 
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.ForeColor = System.Drawing.Color.Black;
-            this.metroLabel2.Location = new System.Drawing.Point(175, 0);
+            this.metroLabel2.Location = new System.Drawing.Point(103, 0);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(47, 20);
             this.metroLabel2.Style = MetroFramework.MetroColorStyle.Yellow;
@@ -81,7 +82,7 @@
             // 
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.ForeColor = System.Drawing.Color.Black;
-            this.metroLabel3.Location = new System.Drawing.Point(228, 0);
+            this.metroLabel3.Location = new System.Drawing.Point(156, 0);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(61, 20);
             this.metroLabel3.Style = MetroFramework.MetroColorStyle.Yellow;
@@ -93,7 +94,7 @@
             // 
             this.metroLabel4.AutoSize = true;
             this.metroLabel4.ForeColor = System.Drawing.Color.Black;
-            this.metroLabel4.Location = new System.Drawing.Point(292, 0);
+            this.metroLabel4.Location = new System.Drawing.Point(220, 0);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(87, 20);
             this.metroLabel4.Style = MetroFramework.MetroColorStyle.Yellow;
@@ -106,7 +107,7 @@
             // 
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.ForeColor = System.Drawing.Color.Black;
-            this.metroLabel5.Location = new System.Drawing.Point(384, 0);
+            this.metroLabel5.Location = new System.Drawing.Point(312, 0);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(55, 20);
             this.metroLabel5.Style = MetroFramework.MetroColorStyle.Yellow;
@@ -131,7 +132,7 @@
             this.metroDenumire.CustomButton.Visible = false;
             this.metroDenumire.ForeColor = System.Drawing.SystemColors.ControlText;
             this.metroDenumire.Lines = new string[0];
-            this.metroDenumire.Location = new System.Drawing.Point(103, 37);
+            this.metroDenumire.Location = new System.Drawing.Point(31, 37);
             this.metroDenumire.MaxLength = 32767;
             this.metroDenumire.Name = "metroDenumire";
             this.metroDenumire.PasswordChar = '\0';
@@ -164,7 +165,7 @@
             this.metroCalorii.CustomButton.UseSelectable = true;
             this.metroCalorii.CustomButton.Visible = false;
             this.metroCalorii.Lines = new string[0];
-            this.metroCalorii.Location = new System.Drawing.Point(175, 37);
+            this.metroCalorii.Location = new System.Drawing.Point(103, 37);
             this.metroCalorii.MaxLength = 32767;
             this.metroCalorii.Name = "metroCalorii";
             this.metroCalorii.PasswordChar = '\0';
@@ -196,7 +197,7 @@
             this.metroProteine.CustomButton.UseSelectable = true;
             this.metroProteine.CustomButton.Visible = false;
             this.metroProteine.Lines = new string[0];
-            this.metroProteine.Location = new System.Drawing.Point(228, 37);
+            this.metroProteine.Location = new System.Drawing.Point(156, 37);
             this.metroProteine.MaxLength = 32767;
             this.metroProteine.Name = "metroProteine";
             this.metroProteine.PasswordChar = '\0';
@@ -228,7 +229,7 @@
             this.metroCarbohidratii.CustomButton.UseSelectable = true;
             this.metroCarbohidratii.CustomButton.Visible = false;
             this.metroCarbohidratii.Lines = new string[0];
-            this.metroCarbohidratii.Location = new System.Drawing.Point(292, 37);
+            this.metroCarbohidratii.Location = new System.Drawing.Point(220, 37);
             this.metroCarbohidratii.MaxLength = 32767;
             this.metroCarbohidratii.Name = "metroCarbohidratii";
             this.metroCarbohidratii.PasswordChar = '\0';
@@ -260,7 +261,7 @@
             this.metroGrasimi.CustomButton.UseSelectable = true;
             this.metroGrasimi.CustomButton.Visible = false;
             this.metroGrasimi.Lines = new string[0];
-            this.metroGrasimi.Location = new System.Drawing.Point(384, 37);
+            this.metroGrasimi.Location = new System.Drawing.Point(312, 37);
             this.metroGrasimi.MaxLength = 32767;
             this.metroGrasimi.Name = "metroGrasimi";
             this.metroGrasimi.PasswordChar = '\0';
@@ -282,7 +283,7 @@
             this.metroTile1.ActiveControl = null;
             this.metroTile1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.metroTile1.ForeColor = System.Drawing.Color.White;
-            this.metroTile1.Location = new System.Drawing.Point(175, 162);
+            this.metroTile1.Location = new System.Drawing.Point(104, 152);
             this.metroTile1.Name = "metroTile1";
             this.metroTile1.Size = new System.Drawing.Size(203, 68);
             this.metroTile1.TabIndex = 13;
@@ -308,7 +309,7 @@
             this.groupTipProdus.Controls.Add(this.metroFructe);
             this.groupTipProdus.Controls.Add(this.metroCereale);
             this.groupTipProdus.Controls.Add(this.metroLactate);
-            this.groupTipProdus.Location = new System.Drawing.Point(103, 67);
+            this.groupTipProdus.Location = new System.Drawing.Point(31, 67);
             this.groupTipProdus.Name = "groupTipProdus";
             this.groupTipProdus.Size = new System.Drawing.Size(334, 79);
             this.groupTipProdus.TabIndex = 14;
@@ -404,11 +405,21 @@
             this.metroLactate.Text = "Lactate";
             this.metroLactate.UseSelectable = true;
             // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.Location = new System.Drawing.Point(31, 223);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(475, 120);
+            this.metroLabel6.TabIndex = 15;
+            this.metroLabel6.Text = resources.GetString("metroLabel6.Text");
+            // 
             // AdaugaAliment
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.metroLabel6);
             this.Controls.Add(this.groupTipProdus);
             this.Controls.Add(this.metroTile1);
             this.Controls.Add(this.metroGrasimi);
@@ -453,5 +464,6 @@
         private MetroFramework.Controls.MetroRadioButton metroDulciuri;
         private MetroFramework.Controls.MetroRadioButton metroBauturi;
         private MetroFramework.Controls.MetroRadioButton metroAltele;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
     }
 }

@@ -1,0 +1,5 @@
+1;Piept de pui;165;31;0;4;Carne
+2;Orez;130;3;28;0;Cereale
+3;Cartofi;87;2;20;0;Legume
+4;Mar;52;0;14;0;Fructe
+5;Banana;89;1;23;0;Fructe

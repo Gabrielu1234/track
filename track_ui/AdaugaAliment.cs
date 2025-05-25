@@ -93,7 +93,7 @@ namespace track_ui
             }
             else
             {
-                metroLabel2.ForeColor = Color.Yellow;
+                metroLabel2.ForeColor = Color.Black;
             }
             if (!int.TryParse(metroProteine.Text, out proteine))
             {
